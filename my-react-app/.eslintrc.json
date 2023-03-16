@@ -25,6 +25,10 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks"],
   "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": false, "optionalDependencies": true, "peerDependencies": false }
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "comma-dangle": ["error", "only-multiline"],
@@ -39,9 +43,10 @@
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-var-reqiures": "off",
-    "react/jsx-uses-react": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts", "jsx"] }],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -63,6 +68,7 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
+
     /* "import/extensions": ["error", "ignorePackages", { "": "never" }] */
   }
 }
