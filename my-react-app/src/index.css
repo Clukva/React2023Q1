@@ -10,8 +10,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* header styles */
-
 header {
   width: 100%;
   height: 100px;
@@ -32,8 +30,10 @@ header {
   cursor: pointer;
   transform: scale(1.2);
 }
-
-/* main section styles */
+.header-link:visited {
+  text-decoration: underline;
+  color: rgb(188, 50, 50);
+}
 
 .main-error,
 .main-cards {

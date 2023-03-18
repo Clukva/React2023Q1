@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IProps {}
@@ -43,7 +43,6 @@ export default class MyCharacter extends React.Component<IProps, IState> {
             isLoaded: true,
             items: result.results,
           });
-          console.log(result.results);
         },
         (error) => {
           this.setState({
