@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const addHeader: FC = () => {
   return (
     <header>
-      <Link className="header-link" to="/">
+      <NavLink className="header-link" to="/">
         Home
-      </Link>
-      <Link className="header-link" to="/about">
+      </NavLink>
+      <NavLink className="header-link" to="/about">
         About Us
-      </Link>
+      </NavLink>
     </header>
   );
 };
