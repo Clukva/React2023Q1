@@ -1,29 +1,5 @@
 import React from 'react';
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface IProps {}
-
-type IItems = {
-  created: string;
-  episode: [number, string];
-  gender: string;
-  id: number;
-  image: string;
-  location: { name: string; url: string };
-  name: string;
-  origin: { name: string; url: string };
-  species: string;
-  status: string;
-  type: string;
-  url: string;
-};
-
-interface IState {
-  error: null | { message: string };
-  isLoaded: boolean;
-  items: Array<IItems>;
-  inputValue: string;
-}
+import { IProps, IState } from '../interfaces/MyCharacterInterfases';
 
 export default class MyCharacter extends React.Component<IProps, IState> {
   constructor(props: IProps) {

@@ -10,6 +10,9 @@ const addHeader: FC = () => {
       <NavLink className="header-link" to="/about">
         About Us
       </NavLink>
+      <NavLink className="header-link" to="/forms">
+        Forms
+      </NavLink>
     </header>
   );
 };
