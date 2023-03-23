@@ -22,3 +22,16 @@ export interface IState {
   items: Array<IItems>;
   inputValue: string;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface IPropsForm {}
+
+export interface IStateForm {
+  formValues: {
+    nameForm: string;
+    surname: string;
+    birthday: string;
+    country: string;
+  };
+  cardsArray: { nameForm?: string; surname?: string; birthday?: string; country?: string }[];
+}

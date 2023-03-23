@@ -10,7 +10,6 @@ export default class MyCharacter extends React.Component<IProps, IState> {
       items: [],
       inputValue: '',
     };
-    this.addInputChange = this.addInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -40,10 +39,6 @@ export default class MyCharacter extends React.Component<IProps, IState> {
     localStorage.setItem('input', inputValue);
   }
 
-  addInputChange(ev: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({ inputValue: ev.target.value });
-  }
-
   render() {
     const { error, isLoaded, items, inputValue } = this.state;
 
@@ -67,7 +62,7 @@ export default class MyCharacter extends React.Component<IProps, IState> {
                 type="text"
                 placeholder="Search"
                 value={inputValue}
-                onChange={this.addInputChange}
+                onChange={(e) => this.setState({ inputValue: e.target.value })}
               />
             </form>
           </div>
