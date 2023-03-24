@@ -32,6 +32,19 @@ export interface IStateForm {
     surname: string;
     birthday: string;
     country: string;
+    birthpersonalData: string;
+    newsletter: string;
+    myGender: string;
   };
-  cardsArray: { nameForm?: string; surname?: string; birthday?: string; country?: string }[];
+  cardsArray: {
+    nameForm?: string;
+    surname?: string;
+    birthday?: string;
+    country?: string;
+    birthpersonalData?: string;
+    newsletter?: string;
+    myGender?: string;
+  }[];
+  myImage?: File | null;
+  imagePrev?: string;
 }
