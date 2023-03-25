@@ -6,7 +6,7 @@ import MyForm from '../components/MyForm';
 const addFormsPage: FC = () => {
   return (
     <div>
-      <h1>Add form</h1>
+      <h3 className="form-title">Add form</h3>
       <MyForm />
     </div>
   );

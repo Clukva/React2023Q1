@@ -1,7 +1,9 @@
-import React, { SyntheticEvent } from 'react';
+import React, { createRef, SyntheticEvent } from 'react';
 import { IPropsForm, IStateForm } from '../interfaces/MyCharacterInterfases';
 
 export default class MyForm extends React.Component<IPropsForm, IStateForm> {
+  private fileRef = createRef<HTMLInputElement>();
+
   constructor(props: IPropsForm | Readonly<IPropsForm>) {
     super(props);
     this.state = {
@@ -10,14 +12,14 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
         surname: '',
         birthday: '',
         country: '',
-        birthpersonalData: '',
-        newsletter: '',
+        birthpersonalData: 'I dont  consent to my personal data',
+        newsletter: 'I dont  subscribe to the newsletter',
         myGender: '',
+        myImage: null,
+        // eslint-disable-next-line react/no-unused-state
+        imagePrev: '',
       },
       cardsArray: [],
-      myImage: null,
-      // eslint-disable-next-line react/no-unused-state
-      imagePrev: '',
     };
   }
 
@@ -33,14 +35,16 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
   };
 
   handleChangeChekbox = (event: React.ChangeEvent<HTMLInputElement>) => {
+    /*     event.preventDefault();
+     */
     const { name, value, type, checked } = event.target;
     const { formValues } = this.state;
-    const newValue = type === 'checkbox' ? checked : value;
+    const newValue = type === 'checkbox' && checked ? `I ${value}` : `I dont ${value}`;
     const newValueRadio = type === 'radio' ? value : `I ${value}`;
     this.setState({
       formValues: {
         ...formValues,
-        [name]: newValue ? newValueRadio : `I dont ${value}`,
+        [name]: type === 'checkbox' ? newValue : newValueRadio,
       },
     });
   };
@@ -57,74 +61,65 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
         surname: '',
         birthday: '',
         country: '',
-        birthpersonalData: '',
-        newsletter: '',
+        birthpersonalData: formValues.birthpersonalData,
+        newsletter: formValues.newsletter,
         myGender: '',
+        myImage: null,
+        imagePrev: '',
       },
-      myImage: null,
     });
   };
 
-  handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputElement = event.target as HTMLInputElement;
-    if (inputElement.files) {
+  handleFileSelect = (/* event: React.ChangeEvent<HTMLInputElement> */) => {
+    const inputElement = this.fileRef.current;
+    const { formValues } = this.state;
+
+    if (inputElement && inputElement.files) {
       const { files } = inputElement;
       const file = files[0];
       const reader = new FileReader();
       reader.onloadend = () => {
         this.setState({
-          myImage: file,
-          // eslint-disable-next-line react/no-unused-state
-          imagePrev: reader.result as string,
+          formValues: {
+            ...formValues,
+            myImage: file,
+            imagePrev: reader.result as string,
+          },
         });
       };
       reader.readAsDataURL(file);
     }
-
-    /*     const reader = new FileReader();
-    reader.onloadend = () => {
-      this.setState({ imagePrev: reader.result as string });
-      this.forceUpdate();
-    }; */
   };
 
   render() {
-    const { formValues, cardsArray, myImage, imagePrev } = this.state;
+    const { formValues, cardsArray } = this.state;
     const { nameForm, surname, birthday, country } = formValues;
-
-    /*     let imagePrev = null;
-    if (myImage) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const result = reader.result as string;
-        imagePrev = <img src={result} alt="result" />;
-        this.forceUpdate();
-      };
-      reader.readAsDataURL(myImage);
-    } */
+    // eslint-disable-next-line no-console
+    console.log(new Date().toISOString());
 
     return (
       <div>
         {' '}
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="nameForm">
+        <form className="form-conteiner" onSubmit={this.handleSubmit}>
+          <label className="input-name" htmlFor="nameForm">
             Name:
             <input type="text" value={nameForm} onChange={this.handleChange} name="nameForm" />
           </label>
-          <label htmlFor="surname">
+          <label className="input-name" htmlFor="surname">
             Surname:
             <input type="text" value={surname} onChange={this.handleChange} name="surname" />
           </label>
-          <label htmlFor="birthday">
+          <label className="input-name" htmlFor="birthday">
             Birthday:
             <input type="date" value={birthday} onChange={this.handleChange} name="birthday" />
           </label>
-          <label htmlFor="country">
+          <label className="input-name" htmlFor="country">
             Country:
-            <select inputMode="text" name="country" value={country} onChange={this.handleChange}>
-              <option value="Belarus" selected>
-                Belarus
+            <select name="country" value={country} onChange={this.handleChange}>
+              <option value="Choose country" defaultValue="Choose country">
+                Choose country
               </option>
+              <option value="Belarus">Belarus</option>
               <option value="Litunia">Litunia</option>
               <option value="Latvia">Latvia</option>
               <option value="Poland">Poland</option>
@@ -133,20 +128,21 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
               <option value="Another country">Another country</option>
             </select>
           </label>
+          <br />
           <label htmlFor="birthpersonalData">
             <input
               type="checkbox"
               name="birthpersonalData"
-              value="consent to my personal data"
+              value=" consent to my personal data"
               onChange={this.handleChangeChekbox}
             />
-            I consent to my personal data
+            Consent to my personal data
           </label>
           <label htmlFor="newsletter">
             <input
               type="checkbox"
               name="newsletter"
-              value="subscribe to the newsletter"
+              value=" subscribe to the newsletter"
               onChange={this.handleChangeChekbox}
             />
             Subscribe to the newsletter
@@ -181,26 +177,36 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
               Another
             </label>
           </p>
-          <label htmlFor="myImage">
+          <label className="input-name" htmlFor="myImage">
             My Image:
-            <input type="file" name="myImage" onChange={this.handleFileSelect} />
+            <input type="file" name="myImage" ref={this.fileRef} onChange={this.handleFileSelect} />
           </label>
-          <button type="submit">Submit</button>
+          <button className="form-submit" type="submit">
+            Submit
+          </button>
         </form>
-        {cardsArray.map((card) => (
-          <div className="form-cards" key={new Date().getTime()}>
-            <h6>{`Name: ${card.nameForm}`}</h6>
-            <h6>{`Surname: ${card.surname}`}</h6>
-            <h6>{`Birthday: ${card.birthday}`}</h6>
-            <h6>{`Country: ${card.country}`}</h6>
-            <h6>{`${card.birthpersonalData}`}</h6>
-            <h6>{`${card.newsletter}`}</h6>
-            <h6>{`${card.myGender}`}</h6>
-            <h6>
-              <img src={`${imagePrev}`} alt="result" />
-            </h6>
-          </div>
-        ))}
+        <div className="form-cards-conteiner">
+          {cardsArray.map((card) => (
+            <div className="form-cards" key={setTimeout(new Date().toISOString())}>
+              <img className="form-image" src={`${card.imagePrev}`} alt="downlod images" />
+              <pre>
+                {`Name: ${card.nameForm}`}
+                <br />
+                {`Surname: ${card.surname}`}
+                <br />
+                {`Birthday: ${card.birthday}`}
+                <br />
+                {`Country: ${card.country}`}
+                <br />
+                {`Gender: ${card.myGender}`}
+                <br />
+                {`${card.birthpersonalData}`}
+                <br />
+                {`${card.newsletter}`}
+              </pre>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
