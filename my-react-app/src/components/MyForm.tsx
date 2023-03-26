@@ -1,5 +1,6 @@
 import React, { createRef, SyntheticEvent } from 'react';
 import { IPropsForm, IStateForm } from '../interfaces/MyCharacterInterfases';
+import validateTextInput from '../utils/utils';
 
 export default class MyForm extends React.Component<IPropsForm, IStateForm> {
   private fileRef = createRef<HTMLInputElement>();
@@ -89,12 +90,12 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
       !myImage ||
       !this.inputRefSub.current?.checked
     ) {
-      if (!nameForm) {
+      if (!nameForm || !validateTextInput(nameForm)) {
         this.inputRefName.current?.setAttribute('style', `opacity: 1`);
       } else if (nameForm) {
         this.inputRefName.current?.setAttribute('style', `opacity: 0`);
       }
-      if (!surname) {
+      if (!surname || !validateTextInput(surname)) {
         this.inputRefSurname.current?.setAttribute('style', `opacity: 1`);
       } else if (surname) {
         this.inputRefSurname.current?.setAttribute('style', `opacity: 0`);
@@ -190,7 +191,7 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
             <input type="text" value={nameForm} onChange={this.handleChange} name="nameForm" />
           </label>
           <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefName}>
-            Please write name correctly
+            Please write name correctly, example Stiven
           </p>
 
           <label className="input-name" htmlFor="surname">
@@ -198,7 +199,7 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
             <input type="text" value={surname} onChange={this.handleChange} name="surname" />
           </label>
           <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefSurname}>
-            Please write surname correctly
+            Please write surname correctly example Sigal
           </p>
 
           <label className="input-name" htmlFor="birthday">
