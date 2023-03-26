@@ -4,7 +4,7 @@
   margin-bottom: 30px;
   display: flex;
   width: 330px;
-  height: 470px;
+  height: 500px;
   flex-direction: column;
   align-items: baseline;
   border: 2px solid rgb(6, 202, 137);
@@ -70,3 +70,9 @@
 /* .input-text-error {
   opacity: 0;
 } */
+.data-information {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 600;
+  color: rgb(235, 31, 201);
+}
