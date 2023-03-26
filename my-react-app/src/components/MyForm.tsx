@@ -4,6 +4,32 @@ import { IPropsForm, IStateForm } from '../interfaces/MyCharacterInterfases';
 export default class MyForm extends React.Component<IPropsForm, IStateForm> {
   private fileRef = createRef<HTMLInputElement>();
 
+  private inputRefSub = createRef<HTMLInputElement>();
+
+  private inputRef = createRef<HTMLInputElement>();
+
+  private inputRefMale = createRef<HTMLInputElement>();
+
+  private inputRefFemale = createRef<HTMLInputElement>();
+
+  private inputRefAnother = createRef<HTMLInputElement>();
+
+  private inputRefName = createRef<HTMLInputElement>();
+
+  private inputRefSurname = createRef<HTMLInputElement>();
+
+  private inputRefData = createRef<HTMLInputElement>();
+
+  private inputRefCountry = createRef<HTMLInputElement>();
+
+  private inputRefGender = createRef<HTMLInputElement>();
+
+  private inputRefNews = createRef<HTMLInputElement>();
+
+  private inputRefImage = createRef<HTMLInputElement>();
+
+  private inputRefForm = createRef<HTMLFormElement>();
+
   constructor(props: IPropsForm | Readonly<IPropsForm>) {
     super(props);
     this.state = {
@@ -13,7 +39,7 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
         birthday: '',
         country: '',
         birthpersonalData: 'I dont  consent to my personal data',
-        newsletter: 'I dont  subscribe to the newsletter',
+        newsletter: 'I dont subscribe to the newsletter',
         myGender: '',
         myImage: null,
         // eslint-disable-next-line react/no-unused-state
@@ -53,6 +79,66 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
     event.preventDefault();
     const { formValues } = this.state;
     const { cardsArray } = this.state;
+    const { nameForm, surname, birthday, country, myGender, myImage } = formValues;
+    if (
+      !surname ||
+      !nameForm ||
+      !birthday ||
+      !country ||
+      !myGender ||
+      !myImage ||
+      !this.inputRefSub.current?.checked
+    ) {
+      if (!nameForm) {
+        this.inputRefName.current?.setAttribute('style', `opacity: 1`);
+      } else if (nameForm) {
+        this.inputRefName.current?.setAttribute('style', `opacity: 0`);
+      }
+      if (!surname) {
+        this.inputRefSurname.current?.setAttribute('style', `opacity: 1`);
+      } else if (surname) {
+        this.inputRefSurname.current?.setAttribute('style', `opacity: 0`);
+      }
+      if (!birthday) {
+        this.inputRefData.current?.setAttribute('style', `opacity: 1`);
+      } else if (birthday) {
+        this.inputRefData.current?.setAttribute('style', `opacity: 0`);
+      }
+      if (!country) {
+        this.inputRefCountry.current?.setAttribute('style', `opacity: 1`);
+      } else if (country) {
+        this.inputRefCountry.current?.setAttribute('style', `opacity: 0`);
+      }
+      if (!myGender) {
+        this.inputRefGender.current?.setAttribute('style', `opacity: 1`);
+      } else if (myGender) {
+        this.inputRefGender.current?.setAttribute('style', `opacity: 0`);
+      }
+      if (!this.inputRefSub.current?.checked) {
+        this.inputRefNews.current?.setAttribute('style', `opacity: 1`);
+      } else if (this.inputRefSub.current?.checked) {
+        this.inputRefNews.current?.setAttribute('style', `opacity: 0`);
+      }
+      if (!myImage) {
+        this.inputRefImage.current?.setAttribute('style', `opacity: 1`);
+      } else if (myImage) {
+        this.inputRefImage.current?.setAttribute('style', `opacity: 0`);
+      }
+
+      return;
+    }
+    // eslint-disable-next-line no-console
+    console.log(this.inputRefNews.current?.checked);
+
+    this.inputRefName.current?.setAttribute('style', `opacity: 0`);
+    this.inputRefSurname.current?.setAttribute('style', `opacity: 0`);
+    this.inputRefData.current?.setAttribute('style', `opacity: 0`);
+    this.inputRefCountry.current?.setAttribute('style', `opacity: 0`);
+    this.inputRefGender.current?.setAttribute('style', `opacity: 0`);
+    this.inputRefNews.current?.setAttribute('style', `opacity: 0`);
+    this.inputRefImage.current?.setAttribute('style', `opacity: 0`);
+
+    this.inputRefForm.current?.reset();
 
     this.setState({
       cardsArray: [...cardsArray, formValues],
@@ -61,8 +147,8 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
         surname: '',
         birthday: '',
         country: '',
-        birthpersonalData: formValues.birthpersonalData,
-        newsletter: formValues.newsletter,
+        birthpersonalData: 'I dont consent to my personal data',
+        newsletter: 'I dont subscribe to the newsletter',
         myGender: '',
         myImage: null,
         imagePrev: '',
@@ -94,25 +180,35 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
   render() {
     const { formValues, cardsArray } = this.state;
     const { nameForm, surname, birthday, country } = formValues;
-    // eslint-disable-next-line no-console
-    console.log(new Date().toISOString());
 
     return (
       <div>
         {' '}
-        <form className="form-conteiner" onSubmit={this.handleSubmit}>
+        <form className="form-conteiner" onSubmit={this.handleSubmit} ref={this.inputRefForm}>
           <label className="input-name" htmlFor="nameForm">
             Name:
             <input type="text" value={nameForm} onChange={this.handleChange} name="nameForm" />
           </label>
+          <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefName}>
+            Please write name correctly
+          </p>
+
           <label className="input-name" htmlFor="surname">
             Surname:
             <input type="text" value={surname} onChange={this.handleChange} name="surname" />
           </label>
+          <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefSurname}>
+            Please write surname correctly
+          </p>
+
           <label className="input-name" htmlFor="birthday">
             Birthday:
             <input type="date" value={birthday} onChange={this.handleChange} name="birthday" />
           </label>
+          <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefData}>
+            Please write date correctly
+          </p>
+
           <label className="input-name" htmlFor="country">
             Country:
             <select name="country" value={country} onChange={this.handleChange}>
@@ -128,13 +224,17 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
               <option value="Another country">Another country</option>
             </select>
           </label>
-          <br />
+          <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefCountry}>
+            Please write country correctly
+          </p>
+
           <label htmlFor="birthpersonalData">
             <input
               type="checkbox"
               name="birthpersonalData"
-              value=" consent to my personal data"
+              value="consent to my personal data"
               onChange={this.handleChangeChekbox}
+              ref={this.inputRef}
             />
             Consent to my personal data
           </label>
@@ -142,12 +242,16 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
             <input
               type="checkbox"
               name="newsletter"
-              value=" subscribe to the newsletter"
+              value="subscribe to the newsletter"
               onChange={this.handleChangeChekbox}
+              ref={this.inputRefSub}
             />
-            Subscribe to the newsletter
+            Subscribe to the newsletter (required field)
           </label>
-          <p>
+          <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefNews}>
+            Please choose checkbox
+          </p>
+          <p className="input-gender">
             Gender:
             <label htmlFor="myGender">
               <input
@@ -155,6 +259,7 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
                 name="myGender"
                 value="Male"
                 onChange={this.handleChangeChekbox}
+                ref={this.inputRefMale}
               />
               Male
             </label>
@@ -164,6 +269,7 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
                 name="myGender"
                 value="Female"
                 onChange={this.handleChangeChekbox}
+                ref={this.inputRefFemale}
               />
               Female
             </label>
@@ -173,14 +279,23 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
                 name="myGender"
                 value="Another"
                 onChange={this.handleChangeChekbox}
+                ref={this.inputRefAnother}
               />
               Another
             </label>
           </p>
+          <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefGender}>
+            Please choose gender
+          </p>
+
           <label className="input-name" htmlFor="myImage">
             My Image:
             <input type="file" name="myImage" ref={this.fileRef} onChange={this.handleFileSelect} />
           </label>
+          <p className="input-text-error" style={{ opacity: 0 }} ref={this.inputRefImage}>
+            Please choose image
+          </p>
+
           <button className="form-submit" type="submit">
             Submit
           </button>
