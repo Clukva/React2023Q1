@@ -1,18 +1,20 @@
 import { ChangeEventHandler, LegacyRef } from 'react';
 
-export default function formTypeRadio(
-  func: ChangeEventHandler<HTMLInputElement> | undefined,
-  ref: LegacyRef<HTMLInputElement> | undefined,
-  refM: LegacyRef<HTMLInputElement> | undefined,
-  refF: LegacyRef<HTMLInputElement> | undefined,
-  refE: LegacyRef<HTMLInputElement> | undefined
-) {
+interface FormTypeRadioProps {
+  func: ChangeEventHandler<HTMLInputElement> | undefined;
+  refq: LegacyRef<HTMLInputElement> | undefined;
+  refM: LegacyRef<HTMLInputElement> | undefined;
+  refF: LegacyRef<HTMLInputElement> | undefined;
+  refE: LegacyRef<HTMLInputElement> | undefined;
+}
+
+const formTypeRadio: React.FC<FormTypeRadioProps> = ({ func, refq, refM, refF, refE }) => {
   return (
     <>
       <p className="input-gender">
         Gender:
         <label htmlFor="myGender">
-          <input type="radio" name="myGender" value="Male" onChange={func} ref={ref} />
+          <input type="radio" name="myGender" value="Male" onChange={func} ref={refq} />
           Male
         </label>
         <label htmlFor="myGender">
@@ -29,4 +31,6 @@ export default function formTypeRadio(
       </p>
     </>
   );
-}
+};
+
+export default formTypeRadio;

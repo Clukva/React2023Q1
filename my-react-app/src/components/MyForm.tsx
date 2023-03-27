@@ -1,12 +1,12 @@
 import React, { createRef, SyntheticEvent } from 'react';
 import { IPropsForm, IStateForm } from '../interfaces/MyCharacterInterfases';
 import validateTextInput from '../utils/utils';
-import formTypeText from './FormComponents/CardText';
-import formTypeDate from './FormComponents/CardDate';
-import formTypeSelect from './FormComponents/CardSelect';
-import formTypeCheckbox from './FormComponents/CardCheckbox';
-import formTypeRadio from './FormComponents/CardRadio';
-import formTypeImage from './FormComponents/CardImage';
+import FormTypeText from './FormComponents/CardText';
+import FormTypeDate from './FormComponents/CardDate';
+import FormTypeSelect from './FormComponents/CardSelect';
+import FormTypeCheckbox from './FormComponents/CardCheckbox';
+import FormTypeRadio from './FormComponents/CardRadio';
+import FormTypeImage from './FormComponents/CardImage';
 
 export default class MyForm extends React.Component<IPropsForm, IStateForm> {
   private fileRef = createRef<HTMLInputElement>();
@@ -87,8 +87,8 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
     const { cardsArray } = this.state;
     const { nameForm, surname, birthday, country, myGender, myImage } = formValues;
     if (
-      !surname ||
       !nameForm ||
+      !surname ||
       !birthday ||
       !country ||
       !myGender ||
@@ -189,36 +189,39 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
       <div>
         {' '}
         <form className="form-conteiner" onSubmit={this.handleSubmit} ref={this.inputRefForm}>
-          {formTypeText(
-            nameForm,
-            this.handleChange,
-            this.inputRefName,
-            surname,
-            this.handleChange,
-            this.inputRefSurname
-          )}
-          {formTypeDate(birthday, this.handleChange, this.inputRefData)}
-          {formTypeSelect(country, this.handleChange, this.inputRefCountry)}
-          {formTypeCheckbox(
-            this.handleChangeChekbox,
-            this.inputRef,
-            this.handleChangeChekbox,
-            this.inputRefSub,
-            this.inputRefNews
-          )}
-          {formTypeRadio(
-            this.handleChangeChekbox,
-            this.inputRefMale,
-            this.inputRefFemale,
-            this.inputRefAnother,
-            this.inputRefGender
-          )}
-          {formTypeImage(
-            this.handleFileSelect,
-            this.fileRef,
-            this.inputRefImage,
-            this.inputRefSubmit
-          )}
+          <FormTypeText
+            nameForm={nameForm}
+            func={this.handleChange}
+            refName={this.inputRefName}
+            surname={surname}
+            refSur={this.inputRefSurname}
+          />
+          <FormTypeDate birthday={birthday} func={this.handleChange} refq={this.inputRefData} />
+          <FormTypeSelect
+            country={country}
+            func={this.handleChange}
+            refSel={this.inputRefCountry}
+          />
+          <FormTypeCheckbox
+            func={this.handleChangeChekbox}
+            refe={this.inputRef}
+            funcCk={this.handleChangeChekbox}
+            refCk={this.inputRefSub}
+            refError={this.inputRefNews}
+          />
+          <FormTypeRadio
+            func={this.handleChangeChekbox}
+            refq={this.inputRefMale}
+            refM={this.inputRefFemale}
+            refF={this.inputRefAnother}
+            refE={this.inputRefGender}
+          />
+          <FormTypeImage
+            func={this.handleFileSelect}
+            refW={this.fileRef}
+            refM={this.inputRefImage}
+            refF={this.inputRefSubmit}
+          />
         </form>
         <div className="form-cards-conteiner">
           {cardsArray.map((card) => (

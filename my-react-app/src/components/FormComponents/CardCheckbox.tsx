@@ -1,12 +1,20 @@
 import { ChangeEventHandler, LegacyRef } from 'react';
 
-export default function formTypeCheckbox(
-  func: ChangeEventHandler<HTMLInputElement> | undefined,
-  ref: LegacyRef<HTMLInputElement> | undefined,
-  funcCk: ChangeEventHandler<HTMLInputElement> | undefined,
-  refCk: LegacyRef<HTMLInputElement> | undefined,
-  refError: LegacyRef<HTMLInputElement> | undefined
-) {
+interface FormTypeCheckboxProps {
+  func: ChangeEventHandler<HTMLInputElement> | undefined;
+  refe: LegacyRef<HTMLInputElement> | undefined;
+  funcCk: ChangeEventHandler<HTMLInputElement> | undefined;
+  refCk: LegacyRef<HTMLInputElement> | undefined;
+  refError: LegacyRef<HTMLInputElement> | undefined;
+}
+
+const formTypeCheckbox: React.FC<FormTypeCheckboxProps> = ({
+  func,
+  refe,
+  funcCk,
+  refCk,
+  refError,
+}) => {
   return (
     <>
       <label htmlFor="birthpersonalData">
@@ -15,7 +23,7 @@ export default function formTypeCheckbox(
           name="birthpersonalData"
           value="consent to my personal data"
           onChange={func}
-          ref={ref}
+          ref={refe}
         />
         Consent to my personal data
       </label>
@@ -34,4 +42,6 @@ export default function formTypeCheckbox(
       </p>
     </>
   );
-}
+};
+
+export default formTypeCheckbox;

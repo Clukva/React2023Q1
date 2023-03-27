@@ -1,10 +1,12 @@
 import { ChangeEventHandler, LegacyRef } from 'react';
 
-export default function formTypeSelect(
-  country: string,
-  func: ChangeEventHandler<HTMLSelectElement> | undefined,
-  ref: LegacyRef<HTMLParagraphElement> | undefined
-) {
+interface FormTypeSelectProps {
+  country: string;
+  func: ChangeEventHandler<HTMLSelectElement> | undefined;
+  refSel: LegacyRef<HTMLParagraphElement> | undefined;
+}
+
+const formTypeSelect: React.FC<FormTypeSelectProps> = ({ country, func, refSel }) => {
   return (
     <>
       <label className="input-name" htmlFor="country">
@@ -22,9 +24,11 @@ export default function formTypeSelect(
           <option value="Another country">Another country</option>
         </select>
       </label>
-      <p className="input-text-error" style={{ opacity: 0 }} ref={ref}>
+      <p className="input-text-error" style={{ opacity: 0 }} ref={refSel}>
         Please write country correctly
       </p>
     </>
   );
-}
+};
+
+export default formTypeSelect;
