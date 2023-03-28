@@ -230,7 +230,7 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
         </form>
         <div className="form-cards-conteiner">
           {cardsArray.map((card) => (
-            <div className="form-cards" key={setTimeout(new Date().toISOString())}>
+            <div className="form-cards" key={new Date().toISOString()}>
               <img className="form-image" src={`${card.imagePrev}`} alt="downlod images" />
               <pre>
                 {`Name: ${card.nameForm}`} <br />
