@@ -2,6 +2,12 @@
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "!**/node_modules/**"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -24,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
-    "linting": "npx eslint src"
+    "linting": "npx eslint src",
+    "test1": "react-scripts test --watchAll --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +55,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "babel-jest": "^29.5.0",

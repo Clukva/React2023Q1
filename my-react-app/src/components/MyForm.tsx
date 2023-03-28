@@ -188,7 +188,12 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
     return (
       <div>
         {' '}
-        <form className="form-conteiner" onSubmit={this.handleSubmit} ref={this.inputRefForm}>
+        <form
+          id="my-form"
+          className="form-conteiner"
+          onSubmit={this.handleSubmit}
+          ref={this.inputRefForm}
+        >
           <FormTypeText
             nameForm={nameForm}
             func={this.handleChange}
