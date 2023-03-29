@@ -14,15 +14,15 @@ const formTypeRadio: React.FC<FormTypeRadioProps> = ({ func, refq, refM, refF, r
       <p className="input-gender">
         Gender:
         <label htmlFor="myGender">
-          <input type="radio" name="myGender" value="Male" onChange={func} ref={refq} />
+          <input type="radio" name="myGender" value="Male" onInput={func} ref={refq} />
           Male
         </label>
         <label htmlFor="myGender">
-          <input type="radio" name="myGender" value="Female" onChange={func} ref={refM} />
+          <input type="radio" name="myGender" value="Female" onInput={func} ref={refM} />
           Female
         </label>
         <label htmlFor="myGender">
-          <input type="radio" name="myGender" value="Another" onChange={func} ref={refF} />
+          <input type="radio" name="myGender" value="Another" onInput={func} ref={refF} />
           Another
         </label>
       </p>
