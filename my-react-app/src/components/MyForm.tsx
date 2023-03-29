@@ -73,8 +73,6 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
     const { formValues } = this.state;
     const newValue = type === 'checkbox' && checked ? `I ${value}` : `I dont ${value}`;
     const newValueRadio = type === 'radio' && checked ? value : `I ${value}`;
-    // eslint-disable-next-line no-console
-    console.log(newValueRadio);
     this.setState({
       formValues: {
         ...formValues,
