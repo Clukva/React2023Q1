@@ -1,0 +1,78 @@
+.form-conteiner {
+  margin: 0 auto;
+  padding: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  width: 330px;
+  height: 500px;
+  flex-direction: column;
+  align-items: baseline;
+  border: 2px solid rgb(6, 202, 137);
+  background-color: aquamarine;
+}
+
+.form-cards {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form-image {
+  max-width: 70%;
+  max-height: 50%;
+  object-fit: contain;
+}
+
+.input-name {
+  width: 100px;
+}
+.form-submit {
+  width: 150px;
+  height: 25px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.form-title {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100px;
+}
+.form-cards-conteiner {
+  margin: 0 auto;
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+.form-cards {
+  width: 280px;
+  height: 280px;
+  border: 2px solid rgb(6, 202, 137);
+  background-color: aquamarine;
+}
+
+.input-text-error {
+  margin: 0px;
+  color: rgb(246, 94, 94);
+  font-size: 15px;
+}
+
+.input-gender {
+  margin-bottom: 0px;
+}
+
+/* .input-text-error {
+  opacity: 0;
+} */
+.data-information {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 600;
+  color: rgb(235, 31, 201);
+}
