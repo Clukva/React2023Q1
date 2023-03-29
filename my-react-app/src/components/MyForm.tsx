@@ -229,8 +229,9 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
           />
         </form>
         <div className="form-cards-conteiner">
-          {cardsArray.map((card) => (
-            <div className="form-cards" key={card.nameForm + new Date().toISOString()}>
+          {cardsArray.map((card, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className="form-cards" key={i}>
               <img className="form-image" src={`${card.imagePrev}`} alt="downlod images" />
               <pre>
                 {`Name: ${card.nameForm}`} <br />
