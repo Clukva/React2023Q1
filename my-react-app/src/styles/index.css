@@ -17,7 +17,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-    align-items: center;
+  align-items: center;
 
   gap: 50px;
 }
@@ -119,3 +119,8 @@ header {
   color: rgb(107, 167, 2);
 }
 
+.downloading-title {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}

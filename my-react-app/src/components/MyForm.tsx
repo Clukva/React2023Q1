@@ -159,7 +159,7 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
     this.inputRefSubmit.current?.setAttribute('style', `opacity: 1`);
     setTimeout(() => {
       this.inputRefSubmit.current?.setAttribute('style', `opacity: 0`);
-    }, 4000);
+    }, 0);
   };
 
   handleFileSelect = () => {
