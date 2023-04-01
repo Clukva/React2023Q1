@@ -28,13 +28,13 @@ export interface IPropsForm {}
 
 export interface IStateForm {
   formValues: {
-    nameForm: string;
-    surname: string;
-    birthday: string;
-    country: string;
-    birthpersonalData: string;
-    newsletter: string;
-    myGender: string;
+    nameForm?: string;
+    surname?: string;
+    birthday?: string;
+    country?: string;
+    birthpersonalData?: string;
+    newsletter?: string;
+    myGender?: string;
     myImage?: File | null;
     imagePrev?: string;
   };

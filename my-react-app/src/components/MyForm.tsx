@@ -1,4 +1,6 @@
-import React, { createRef, SyntheticEvent } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { createRef, SyntheticEvent, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { IPropsForm, IStateForm } from '../interfaces/MyCharacterInterfases';
 import validateTextInput from '../utils/utils';
 import FormTypeText from './FormComponents/CardText';
@@ -8,7 +10,109 @@ import FormTypeCheckbox from './FormComponents/CardCheckbox';
 import FormTypeRadio from './FormComponents/CardRadio';
 import FormTypeImage from './FormComponents/CardImage';
 
-export default class MyForm extends React.Component<IPropsForm, IStateForm> {
+/* type FormValues = {
+  firstName: string;
+  lastName: string;
+  email: string;
+}; */
+
+export default function MyForm1() {
+  const inputRefName = createRef<HTMLInputElement>();
+  const inputRefSurname = createRef<HTMLInputElement>();
+  const inputRefData = createRef<HTMLInputElement>();
+
+  const [cardData, setCardData] = useState<IStateForm>({
+    formValues: {
+      nameForm: '',
+      surname: '',
+      birthday: '',
+      country: '',
+      birthpersonalData: 'I dont  consent to my personal data',
+      newsletter: 'I dont subscribe to the newsletter',
+      myGender: '',
+      myImage: null,
+      imagePrev: '',
+    },
+    cardsArray: [],
+  });
+  const { register, handleSubmit, reset } = useForm<IStateForm>();
+  /* const onSubmit: SubmitHandler<IStateForm> = (data) => console.log(data); */
+
+  const handleChangeText: SubmitHandler<IStateForm> = (data) => {
+    const { nameForm, surname, birthday } = data.formValues;
+    const { formValues, cardsArray } = cardData;
+
+    setCardData({
+      formValues: {
+        ...formValues,
+        nameForm: `${nameForm}`,
+        surname: `${surname}`,
+        birthday: `${birthday}`,
+      },
+      cardsArray: [...cardsArray, data.formValues],
+    });
+
+    reset();
+  };
+
+  const { formValues, cardsArray } = cardData;
+
+  return (
+    <div>
+      <form className="form-conteiner" onSubmit={handleSubmit(handleChangeText)}>
+        <label className="input-name" htmlFor="nameForm">
+          Name:
+          <input type="text" {...register('formValues.nameForm')} />
+        </label>
+
+        <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefName}>
+          Please write name correctly, example Stiven
+        </p>
+
+        <label className="input-name" htmlFor="surname">
+          Surname:
+          <input id="surname" type="text" {...register('formValues.surname')} />
+        </label>
+        <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefSurname}>
+          Please write surname correctly example Sigal
+        </p>
+        <label className="input-name" htmlFor="birthday">
+          Birthday:
+          <input
+            type="date"
+            min="1940-04-01"
+            max="2023-03-28"
+            {...register('formValues.birthday')}
+          />
+        </label>
+        <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefData}>
+          Please write date correctly
+        </p>
+        <input type="submit" />
+      </form>
+      <div className="form-cards-conteiner">
+        {cardsArray.map((card, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <div className="form-cards" key={i}>
+            <img className="form-image" src={`${card.imagePrev}`} alt="downlod images" />
+            <pre>
+              {`Name: ${card.nameForm}`} <br />
+              {`Surname: ${card.surname}`} <br />
+              {`Birthday: ${card.birthday}`} <br />
+              {`Country: ${card.country}`} <br />
+              {`Gender: ${card.myGender}`} <br />
+              {`${card.birthpersonalData}`} <br />
+              {`${card.newsletter}`}
+            </pre>
+          </div>
+        ))}
+        {}
+      </div>
+    </div>
+  );
+}
+
+/* export default class MyForm extends React.Component<IPropsForm, IStateForm> {
   private fileRef = createRef<HTMLInputElement>();
 
   private inputRefSub = createRef<HTMLInputElement>();
@@ -248,4 +352,4 @@ export default class MyForm extends React.Component<IPropsForm, IStateForm> {
       </div>
     );
   }
-}
+} */

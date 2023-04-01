@@ -21,6 +21,7 @@ const formTypeText: React.FC<FormTypeTextProps> = ({
         Name:
         <input id="nameForm" type="text" value={nameForm} onChange={func} name="nameForm" />
       </label>
+
       <p className="input-text-error" style={{ opacity: 0 }} ref={refName}>
         Please write name correctly, example Stiven
       </p>
