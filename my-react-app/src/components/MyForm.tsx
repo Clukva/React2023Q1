@@ -52,12 +52,13 @@ export default function MyForm1() {
           surname: `${surname}`,
           birthday: `${birthday}`,
           country: `${country}`,
-          birthpersonalData: `${birthpersonalData}`,
-          newsletter: `${newsletter}`,
+          birthpersonalData: `${birthpersonalData || 'I dont  consent to my personal data'}`,
+          newsletter: `${newsletter || 'I dont subscribe to the newsletter'}`,
           myGender: `${myGender}`,
         },
       ],
     });
+    reset();
   };
 
   const { formValues, cardsArray } = cardData;
@@ -131,7 +132,7 @@ export default function MyForm1() {
         <label htmlFor="birthpersonalData">
           <input
             type="checkbox"
-            value="consent to my personal data"
+            value="I consent to my personal data"
             {...register('formValues.birthpersonalData')}
           />
           Consent to my personal data
@@ -139,7 +140,7 @@ export default function MyForm1() {
         <label htmlFor="newsletter">
           <input
             type="checkbox"
-            value="subscribe to the newsletter"
+            value="I subscribe to the newsletter"
             {...register('formValues.newsletter')}
           />
           Subscribe to the newsletter (required field)
