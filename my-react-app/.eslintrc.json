@@ -51,6 +51,8 @@
     "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts", "jsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

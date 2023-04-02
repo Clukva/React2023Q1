@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { createRef, SyntheticEvent, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 import { IPropsForm, IStateForm } from '../interfaces/MyCharacterInterfases';
 import validateTextInput from '../utils/utils';
 import FormTypeText from './FormComponents/CardText';
@@ -10,16 +9,15 @@ import FormTypeCheckbox from './FormComponents/CardCheckbox';
 import FormTypeRadio from './FormComponents/CardRadio';
 import FormTypeImage from './FormComponents/CardImage';
 
-/* type FormValues = {
-  firstName: string;
-  lastName: string;
-  email: string;
-}; */
-
 export default function MyForm1() {
   const inputRefName = createRef<HTMLInputElement>();
   const inputRefSurname = createRef<HTMLInputElement>();
   const inputRefData = createRef<HTMLInputElement>();
+  const inputRefCountry = createRef<HTMLInputElement>();
+  const inputRefNews = createRef<HTMLInputElement>();
+  const inputRefGender = createRef<HTMLInputElement>();
+  const inputRefImage = createRef<HTMLInputElement>();
+  const inputRefSubmit = createRef<HTMLParagraphElement>();
 
   const [cardData, setCardData] = useState<IStateForm>({
     formValues: {
@@ -30,32 +28,55 @@ export default function MyForm1() {
       birthpersonalData: 'I dont  consent to my personal data',
       newsletter: 'I dont subscribe to the newsletter',
       myGender: '',
-      myImage: null,
+      myImage: [null],
       imagePrev: '',
     },
     cardsArray: [],
   });
   const { register, handleSubmit, reset } = useForm<IStateForm>();
-  /* const onSubmit: SubmitHandler<IStateForm> = (data) => console.log(data); */
 
   const handleChangeText: SubmitHandler<IStateForm> = (data) => {
-    const { nameForm, surname, birthday } = data.formValues;
+    const { nameForm, surname, birthday, country, birthpersonalData, newsletter, myGender } =
+      data.formValues;
     const { formValues, cardsArray } = cardData;
 
     setCardData({
       formValues: {
         ...formValues,
-        nameForm: `${nameForm}`,
-        surname: `${surname}`,
-        birthday: `${birthday}`,
       },
-      cardsArray: [...cardsArray, data.formValues],
+      cardsArray: [
+        ...cardsArray,
+        {
+          ...formValues,
+          nameForm: nameForm as string,
+          surname: `${surname}`,
+          birthday: `${birthday}`,
+          country: `${country}`,
+          birthpersonalData: `${birthpersonalData}`,
+          newsletter: `${newsletter}`,
+          myGender: `${myGender}`,
+        },
+      ],
     });
-
-    reset();
   };
 
   const { formValues, cardsArray } = cardData;
+
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { target } = event;
+
+    if (target.files && typeof target.files[0] === 'object') {
+      const file = target.files[0];
+      const url = URL.createObjectURL(file);
+      setCardData({
+        formValues: {
+          ...formValues,
+          imagePrev: url,
+        },
+        cardsArray: [...cardsArray],
+      });
+    }
+  };
 
   return (
     <div>
@@ -81,20 +102,85 @@ export default function MyForm1() {
           <input
             type="date"
             min="1940-04-01"
-            max="2023-03-28"
+            max="2023-04-06"
             {...register('formValues.birthday')}
           />
         </label>
         <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefData}>
           Please write date correctly
         </p>
-        <input type="submit" />
+        <label className="input-name" htmlFor="country">
+          Country:
+          <select {...register('formValues.country')}>
+            <option value="Choose country" defaultValue="Choose country">
+              Choose country
+            </option>
+            <option value="Belarus">Belarus</option>
+            <option value="Litunia">Litunia</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Poland">Poland</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="Russia">Russia</option>
+            <option value="Another country">Another country</option>
+          </select>
+        </label>
+        <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefCountry}>
+          Please write country correctly
+        </p>
+
+        <label htmlFor="birthpersonalData">
+          <input
+            type="checkbox"
+            value="consent to my personal data"
+            {...register('formValues.birthpersonalData')}
+          />
+          Consent to my personal data
+        </label>
+        <label htmlFor="newsletter">
+          <input
+            type="checkbox"
+            value="subscribe to the newsletter"
+            {...register('formValues.newsletter')}
+          />
+          Subscribe to the newsletter (required field)
+        </label>
+        <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefNews}>
+          Please choose checkbox
+        </p>
+        <p className="input-gender">
+          Gender:
+          <label htmlFor="myGender">
+            <input type="radio" {...register('formValues.myGender')} value="Male" />
+            Male
+          </label>
+          <label htmlFor="myGender">
+            <input type="radio" {...register('formValues.myGender')} value="Female" />
+            Female
+          </label>
+          <label htmlFor="myGender">
+            <input type="radio" {...register('formValues.myGender')} value="Another" />
+            Another
+          </label>
+        </p>
+        <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefGender}>
+          Please choose gender
+        </p>
+        <label className="input-name" htmlFor="myImage">
+          My Image:
+          <input type="file" multiple accept="image/*" onChange={handleFileSelect} />
+        </label>
+        <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefImage}>
+          Please choose image
+        </p>
+        <p className="data-information" style={{ opacity: 0 }} ref={inputRefSubmit}>
+          Data has been saved !
+        </p>
+        <input className="form-submit" type="submit" />
       </form>
       <div className="form-cards-conteiner">
         {cardsArray.map((card, i) => (
-          // eslint-disable-next-line react/no-array-index-key
           <div className="form-cards" key={i}>
-            <img className="form-image" src={`${card.imagePrev}`} alt="downlod images" />
+            <img className="form-image" src={card.imagePrev} alt="downlod images" />
             <pre>
               {`Name: ${card.nameForm}`} <br />
               {`Surname: ${card.surname}`} <br />
@@ -111,7 +197,6 @@ export default function MyForm1() {
     </div>
   );
 }
-
 /* export default class MyForm extends React.Component<IPropsForm, IStateForm> {
   private fileRef = createRef<HTMLInputElement>();
 

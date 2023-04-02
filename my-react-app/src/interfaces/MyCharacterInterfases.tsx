@@ -35,7 +35,7 @@ export interface IStateForm {
     birthpersonalData?: string;
     newsletter?: string;
     myGender?: string;
-    myImage?: File | null;
+    myImage?: [File | null];
     imagePrev?: string;
   };
   cardsArray: {
@@ -46,7 +46,7 @@ export interface IStateForm {
     birthpersonalData?: string;
     newsletter?: string;
     myGender?: string;
-    myImage?: File | null;
+    myImage?: [File | null];
     imagePrev?: string;
   }[];
 }
