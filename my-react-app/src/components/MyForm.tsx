@@ -148,9 +148,9 @@ export default function MyForm1() {
   return (
     <div>
       <form className="form-conteiner" onSubmit={handleSubmit(handleChangeText)}>
-        <label className="input-name" htmlFor="nameForm">
+        <label className="input-name" htmlFor="formValues.nameForm">
           Name:
-          <input type="text" {...register('formValues.nameForm')} />
+          <input id="id-input" type="text" {...register('formValues.nameForm')} />
         </label>
 
         <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefName}>
@@ -243,7 +243,7 @@ export default function MyForm1() {
         <p className="data-information" style={{ opacity: 0 }} ref={inputRefSubmit}>
           Data has been saved !
         </p>
-        <input className="form-submit" type="submit" />
+        <input className="form-submit" type="submit" id="id-submit" />
       </form>
       <div className="form-cards-conteiner">
         {cardsArray.map((card, i) => (
