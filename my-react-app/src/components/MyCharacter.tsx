@@ -12,7 +12,7 @@ function MyCharacter() {
   useEffect(() => {
     localStorage.setItem('input', state.inputValue);
 
-    fetch('https://rickandmortyapi.com/api/character/?page=8')
+    fetch('https://rickandmortyapi.com/api/character/?page=1')
       .then((res) => res.json())
       .then(
         (result) => {
@@ -52,19 +52,16 @@ function MyCharacter() {
   }
   return (
     <>
-      <div className="main-page">
-        <div className="main-page--form">
-          <form action="">
-            <input
-              className="main-page--input"
-              type="text"
-              placeholder="Search"
-              value={state.inputValue}
-              onChange={(e) => setState({ ...state, inputValue: e.target.value })}
-            />
-          </form>
-        </div>
-      </div>
+      <form action="" className="main-page-form">
+        <input
+          className="main-page--input"
+          type="text"
+          placeholder="Search"
+          value={state.inputValue}
+          onChange={(e) => setState({ ...state, inputValue: e.target.value })}
+        />
+        <button type="submit">Search</button>
+      </form>
       <div className="main-cards">
         <div>
           {state.items?.map((item) => (

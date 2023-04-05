@@ -31,10 +31,6 @@ header {
   cursor: pointer;
   transform: scale(1.2);
 }
-/* .header-link: {
-  text-decoration: underline;
-  color: rgb(188, 50, 50);
-} */
 
 .main-error,
 .main-cards {
@@ -66,11 +62,13 @@ header {
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 450px;
+  height: 410px;
   border: 2px solid rgb(20, 185, 130);
   background-color: rgb(194, 239, 224);
 }
-
+.main-card:hover {
+  transform: scale(1.03);
+}
 .card-image {
   display: flex;
   flex-direction: column;
@@ -86,15 +84,16 @@ header {
   margin-top: 25px;
 }
 
-.main-page {
+.main-page-form {
   margin: 0 auto;
   margin-top: 20px;
   height: 100px;
+  width: 400px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  gap: 25px;
   align-items: center;
-  width: 30%;
   background-color: aquamarine;
   border: 2px solid rgb(6, 202, 137);
   border-radius: 10px;
