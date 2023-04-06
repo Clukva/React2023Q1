@@ -22,6 +22,11 @@ export interface IState {
   items: Array<IItems>;
   inputValue: string;
 }
+export interface IStateItem {
+  error: null | { message: string };
+  isLoaded: boolean;
+  items: Array<IItems>;
+}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IPropsForm {}

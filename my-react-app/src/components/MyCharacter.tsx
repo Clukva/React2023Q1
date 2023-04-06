@@ -2,8 +2,14 @@
 /* eslint-disable no-console */
 import React, { createRef, useEffect, useState } from 'react';
 import ReactDOM, { createPortal } from 'react-dom';
-import { IState } from '../interfaces/MyCharacterInterfases';
+import { IItems, IState } from '../interfaces/MyCharacterInterfases';
 import Modal from './Modal';
+
+interface IStateItem {
+  error: null | { message: string };
+  isLoaded: boolean;
+  items: Array<IItems>;
+}
 
 function MyCharacter() {
   const [state, setState] = useState<IState>({
@@ -12,9 +18,15 @@ function MyCharacter() {
     items: [],
     inputValue: localStorage.getItem('input') || '',
   });
+  const [modalContent, setModalContent] = useState<IStateItem>({
+    error: null,
+    isLoaded: false,
+    items: [],
+  });
+
   const inputRefCards = createRef<HTMLInputElement>();
   const [isOpen, setIsOpen] = useState(false);
-  const [currentCardId, setCurrentCardId] = useState(0);
+  const [currentCardId, setCurrentCardId] = useState(1);
 
   useEffect(() => {
     localStorage.setItem('input', state.inputValue);
@@ -38,6 +50,28 @@ function MyCharacter() {
         }
       );
   }, []);
+
+  useEffect(() => {
+    fetch(`https://rickandmortyapi.com/api/character/${currentCardId}`)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setModalContent({
+            ...modalContent,
+            isLoaded: true,
+            items: [result],
+          });
+          console.log(modalContent);
+        },
+        (error) => {
+          setModalContent({
+            ...modalContent,
+            isLoaded: true,
+            error,
+          });
+        }
+      );
+  }, [currentCardId]);
 
   useEffect(() => {
     localStorage.setItem('input', state.inputValue);
@@ -71,13 +105,27 @@ function MyCharacter() {
         <button type="submit">Search</button>
       </form>
       <div className="main-cards">
-        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-          <div className="modal__content">
-            <h1>Modal</h1>
-            <p>{currentCardId}</p>
-            <p>sdgasdfg</p>
-          </div>
-        </Modal>
+        {modalContent.isLoaded && (
+          <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+            <div className="modal__content">
+              <h1>{modalContent.items[0]?.name}</h1>
+
+              <img src={modalContent.items[0]?.image} alt={modalContent.items[0]?.name} />
+              <p>
+                <b>Gender:</b> {modalContent.items[0]?.gender}
+              </p>
+              <p>
+                <b>Species:</b> {modalContent.items[0]?.species}
+              </p>
+              <p>
+                <b>Type:</b> {modalContent.items[0]?.type || 'not specified'}
+              </p>
+              <p>
+                <b>Status:</b> {modalContent.items[0]?.status || 'not specified'}
+              </p>
+            </div>
+          </Modal>
+        )}
         <div>
           {state.items?.map((item) => (
             <React.Fragment key={item.id}>
@@ -89,20 +137,13 @@ function MyCharacter() {
                   setIsOpen(true);
                   setCurrentCardId(item.id);
                 }}
+                aria-hidden="true"
               >
                 <section>
                   <img className="card-image" src={item.image} alt="character" />
                 </section>
                 <section className="card-description">
                   Name <b>{item.name}</b>
-                  <br />
-                  Gender <b>{item.gender}</b>
-                  <br />
-                  Species <b>{item.species}</b>
-                  <br />
-                  Type <b>{item.type}</b>
-                  <br />
-                  Status <b>{item.status}</b>
                 </section>
               </section>
             </React.Fragment>

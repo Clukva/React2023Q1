@@ -1,6 +1,7 @@
 import { create } from 'domain';
-import React, { ReactNode, createRef, useEffect, useMemo } from 'react';
+import React, { ReactNode, createRef, useEffect, useMemo, useState } from 'react';
 import ReactDOM, { createPortal } from 'react-dom';
+import { IState, IStateItem } from '../interfaces/MyCharacterInterfases';
 
 interface Props {
   children: ReactNode;
@@ -11,6 +12,7 @@ interface Props {
 function Modal(props: Props) {
   const { children, open, onClose } = props;
   if (!open) return null;
+
   return ReactDOM.createPortal(
     <div
       className="main-modal"
@@ -20,11 +22,12 @@ function Modal(props: Props) {
           onClose();
         }
       }}
+      aria-hidden="true"
     >
       <div className="main-modal__content">
         {' '}
-        <button type="button" onClick={onClose}>
-          Close modal
+        <button className="modal_close" type="button" onClick={onClose}>
+          &#10008;
         </button>
         {children}
       </div>

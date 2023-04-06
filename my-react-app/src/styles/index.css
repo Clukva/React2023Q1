@@ -62,12 +62,13 @@ header {
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 410px;
+  height: 340px;
   border: 2px solid rgb(20, 185, 130);
   background-color: rgb(194, 239, 224);
 }
 .main-card:hover {
   transform: scale(1.03);
+  cursor: pointer;
 }
 .card-image {
   display: flex;
@@ -135,13 +136,29 @@ header {
 }
 .main-modal__content {
   position: fixed;
+  width: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(248, 248, 248, 0.9);
+  background-color: rgba(248, 248, 248);
   padding: 50px;
   z-index: 1001;
 }
 .modal__content {
   color: black;
 }
+.modal_close {
+  position: relative;
+  background-color: rgb(239, 85, 85);
+  padding: 5px 10px 5px 10px;
+  top: -30px;
+  left: 295px;
+}
+.modal_close:hover {
+  cursor: pointer;
+}
+/* .modal__content p {
+  font-size: 15px;
+  font-weight: 500;
+}
+ */
