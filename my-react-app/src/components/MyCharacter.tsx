@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-console */
+import React, { createRef, useEffect, useState } from 'react';
+import ReactDOM, { createPortal } from 'react-dom';
 import { IState } from '../interfaces/MyCharacterInterfases';
+import Modal from './Modal';
 
 function MyCharacter() {
   const [state, setState] = useState<IState>({
@@ -8,11 +12,14 @@ function MyCharacter() {
     items: [],
     inputValue: localStorage.getItem('input') || '',
   });
+  const inputRefCards = createRef<HTMLInputElement>();
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentCardId, setCurrentCardId] = useState(0);
 
   useEffect(() => {
     localStorage.setItem('input', state.inputValue);
 
-    fetch('https://rickandmortyapi.com/api/character/?page=1')
+    fetch(`https://rickandmortyapi.com/api/character/${`?name=${state.inputValue}`}`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -50,6 +57,7 @@ function MyCharacter() {
   if (!state.isLoaded) {
     return <div className="downloading-title">Downloading...</div>;
   }
+
   return (
     <>
       <form action="" className="main-page-form">
@@ -63,10 +71,25 @@ function MyCharacter() {
         <button type="submit">Search</button>
       </form>
       <div className="main-cards">
+        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+          <div className="modal__content">
+            <h1>Modal</h1>
+            <p>{currentCardId}</p>
+            <p>sdgasdfg</p>
+          </div>
+        </Modal>
         <div>
           {state.items?.map((item) => (
             <React.Fragment key={item.id}>
-              <section className="main-card">
+              <section
+                className="main-card"
+                ref={inputRefCards}
+                id={String(item.id)}
+                onClick={() => {
+                  setIsOpen(true);
+                  setCurrentCardId(item.id);
+                }}
+              >
                 <section>
                   <img className="card-image" src={item.image} alt="character" />
                 </section>
