@@ -28,10 +28,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test1": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "linting": "npx eslint src",
-    "test1": "react-scripts test --watchAll --coverage"
+    "test": "react-scripts test --watchAll --coverage"
   },
   "eslintConfig": {
     "extends": [

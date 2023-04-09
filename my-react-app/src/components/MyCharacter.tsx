@@ -1,15 +1,6 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-console */
-import React, { createRef, useEffect, useState } from 'react';
-import ReactDOM, { createPortal } from 'react-dom';
-import { IItems, IState } from '../interfaces/MyCharacterInterfases';
+import React, { useEffect, useState } from 'react';
+import { IState, IStateItem } from '../interfaces/MyCharacterInterfases';
 import Modal from './Modal';
-
-interface IStateItem {
-  error: null | { message: string };
-  isLoaded: boolean;
-  items: Array<IItems>;
-}
 
 function MyCharacter() {
   const [state, setState] = useState<IState>({
@@ -23,32 +14,33 @@ function MyCharacter() {
     isLoaded: false,
     items: [],
   });
-
-  const inputRefCards = createRef<HTMLInputElement>();
   const [isOpen, setIsOpen] = useState(false);
   const [currentCardId, setCurrentCardId] = useState(1);
 
   useEffect(() => {
     localStorage.setItem('input', state.inputValue);
-
-    fetch(`https://rickandmortyapi.com/api/character/${`?name=${state.inputValue}`}`)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setState({
-            ...state,
-            isLoaded: true,
-            items: result.results,
-          });
-        },
-        (error) => {
-          setState({
-            ...state,
-            isLoaded: true,
-            error,
-          });
-        }
-      );
+    setTimeout(
+      () =>
+        fetch(`https://rickandmortyapi.com/api/character/${`?name=${state.inputValue}`}`)
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              setState({
+                ...state,
+                isLoaded: true,
+                items: result.results,
+              });
+            },
+            (error) => {
+              setState({
+                ...state,
+                isLoaded: true,
+                error,
+              });
+            }
+          ),
+      500
+    );
   }, []);
 
   useEffect(() => {
@@ -61,7 +53,6 @@ function MyCharacter() {
             isLoaded: true,
             items: [result],
           });
-          console.log(modalContent);
         },
         (error) => {
           setModalContent({
@@ -85,11 +76,22 @@ function MyCharacter() {
     })();
   }, []);
 
-  if (state.error) {
-    return <div>Error: {state.error.message}</div>;
-  }
-  if (!state.isLoaded) {
-    return <div className="downloading-title">Downloading...</div>;
+  if (state.error) return <div>Error: {state.error.message}</div>;
+  if (!state.isLoaded)
+    return (
+      <div className="ring">
+        Loading <span> </span>
+      </div>
+    );
+
+  if (modalContent.error) return <div>Error: {modalContent.error.message}</div>;
+
+  if (!modalContent.isLoaded) {
+    return (
+      <div className="ring">
+        Loading <span> </span>
+      </div>
+    );
   }
 
   return (
@@ -131,7 +133,6 @@ function MyCharacter() {
             <React.Fragment key={item.id}>
               <section
                 className="main-card"
-                ref={inputRefCards}
                 id={String(item.id)}
                 onClick={() => {
                   setIsOpen(true);
