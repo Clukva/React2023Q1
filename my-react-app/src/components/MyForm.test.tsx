@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import MyForm1 from './MyForm';
 
 describe('MyComponent', () => {
@@ -6,6 +7,13 @@ describe('MyComponent', () => {
     render(<MyForm1 />);
     expect(screen.getByText('Birthday:')).toBeInTheDocument();
     expect(screen.getByText('Country:')).toBeInTheDocument();
+    expect(screen.getByText('Gender:')).toBeInTheDocument();
+  });
+  it('should render text in the the component', () => {
+    render(<MyForm1 />);
+    expect(screen.getByText('Birthday:')).toBeInTheDocument();
+    expect(screen.getByText('Country:')).toBeInTheDocument();
+    expect(screen.getByText('Gender:')).toBeInTheDocument();
   });
   it('should render text in the the component', () => {
     render(<MyForm1 />);
@@ -39,5 +47,31 @@ describe('MyComponent', () => {
     expect(getByText(/Please write name correctly, example Stiven/i)).toBeInTheDocument();
     expect(subButton).not.toHaveStyle('width: 1500px');
     expect(inpName).not.toHaveStyle('width: 1500px');
+  });
+
+  test('should show error message when nameForm input is empty', async () => {
+    render(<MyForm1 />);
+
+    const inpName = screen.getByLabelText(/Name/i);
+    const submitButton = screen.getByRole('button', { name: /submit/i });
+
+    userEvent.type(inpName, '');
+    userEvent.click(submitButton);
+
+    const errorMessage = screen.getByText(/Please write name correctly, example Stiven/i);
+    expect(errorMessage).toBeInTheDocument();
+  });
+
+  test('should not show error message when nameForm input is not empty', () => {
+    render(<MyForm1 />);
+
+    const inpName = screen.getByLabelText(/Name/i);
+    const submitButton = screen.getByRole('button', { name: /submit/i });
+
+    userEvent.type(inpName, 'Valers');
+    userEvent.click(submitButton);
+
+    const errMessage = screen.queryByText(/Valers/i);
+    expect(errMessage).not.toBeInTheDocument();
   });
 });

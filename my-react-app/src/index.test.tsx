@@ -2,7 +2,6 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import App from './App';
-
 import reportWebVitals from './reportWebVitals';
 
 describe('App', () => {
@@ -32,5 +31,11 @@ describe('reportWebVitals', () => {
 
     reportWebVitals(mockCallback);
     expect(mockCallback).not.toHaveBeenCalled();
+  });
+});
+
+describe('React import', () => {
+  test('should import React correctly', () => {
+    expect(React).toBeDefined();
   });
 });
