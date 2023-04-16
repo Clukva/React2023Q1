@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IItems } from '../interfaces/MyCharacterInterfases';
+import { IStateFormStore } from '../interfaces/MyCharacterInterfases';
 
 interface Response {
-  results: IItems[];
+  results: IStateFormStore[];
 }
 
 export const rickApi = createApi({

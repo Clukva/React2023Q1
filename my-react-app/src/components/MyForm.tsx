@@ -1,7 +1,10 @@
 import React, { createRef, useEffect, useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 import { IStateForm } from '../interfaces/MyCharacterInterfases';
 import validateTextInput from '../utils/utils';
+import { addFormCard } from '../store/formSlice';
+import { RootState } from '../store/store';
 
 export default function MyForm1() {
   const inputRefName = createRef<HTMLInputElement>();
@@ -15,6 +18,12 @@ export default function MyForm1() {
   const inputRefSubmit = createRef<HTMLInputElement>();
 
   const inputImageRef = useRef([false]);
+  let url = '';
+
+  const dispatch = useDispatch();
+  const inputFormValue = useSelector((state: RootState) => state.cards.cards);
+
+  /*  useEffect(() => {}, [inputFormValue]); */
 
   const [cardData, setCardData] = useState<IStateForm>({
     formValues: {
@@ -30,11 +39,20 @@ export default function MyForm1() {
     },
     cardsArray: [],
   });
+
   const { register, handleSubmit, reset } = useForm<IStateForm>();
 
   const handleChangeText: SubmitHandler<IStateForm> = (data) => {
-    const { nameForm, surname, birthday, country, birthpersonalData, newsletter, myGender } =
-      data.formValues;
+    const {
+      nameForm,
+      surname,
+      birthday,
+      country,
+      birthpersonalData,
+      newsletter,
+      myGender,
+      imagePrev,
+    } = data.formValues;
     const { formValues, cardsArray } = cardData;
 
     if (
@@ -112,12 +130,21 @@ export default function MyForm1() {
           }`,
           newsletter: `${newsletter || 'I subscribe to the newsletter'}`,
           myGender: `${myGender}`,
+          /* imagePrev: ; */
         },
       ],
     });
+    dispatch(addFormCard({ ...data.formValues, imagePrev: formValues.imagePrev }));
+    // eslint-disable-next-line no-console
+    console.log(url);
+    // eslint-disable-next-line no-console
+    console.log(data.formValues, url);
+
     inputRefSubmit.current?.setAttribute('style', 'opacity: 1');
     reset();
     inputImageRef.current[0] = false;
+    // eslint-disable-next-line no-console
+    console.log(inputFormValue, formValues);
   };
 
   useEffect(() => {
@@ -133,7 +160,7 @@ export default function MyForm1() {
 
     if (target.files && typeof target.files[0] === 'object') {
       const file = target.files[0];
-      const url = URL.createObjectURL(file);
+      url = URL.createObjectURL(file);
       setCardData({
         formValues: {
           ...formValues,
@@ -143,6 +170,8 @@ export default function MyForm1() {
       });
     }
     inputImageRef.current[0] = true;
+
+    return url;
   };
 
   return (
@@ -246,20 +275,21 @@ export default function MyForm1() {
         <input className="form-submit" type="submit" id="id-submit" />
       </form>
       <div className="form-cards-conteiner">
-        {cardsArray.map((card, i) => (
-          <div className="form-cards" key={i}>
-            <img className="form-image" src={card.imagePrev} alt="downlod images" />
-            <pre>
-              {`Name: ${card.nameForm}`} <br />
-              {`Surname: ${card.surname}`} <br />
-              {`Birthday: ${card.birthday}`} <br />
-              {`Country: ${card.country}`} <br />
-              {`Gender: ${card.myGender}`} <br />
-              {`${card.birthpersonalData}`} <br />
-              {`${card.newsletter}`}
-            </pre>
-          </div>
-        ))}
+        {inputFormValue.length > 1 &&
+          inputFormValue.map((card, i) => (
+            <div className="form-cards" key={i}>
+              <img className="form-image" src={card?.imagePrev} alt="downlod images" />
+              <pre>
+                {`Name: ${card?.nameForm}`} <br />
+                {`Surname: ${card?.surname}`} <br />
+                {`Birthday: ${card?.birthday}`} <br />
+                {`Country: ${card?.country}`} <br />
+                {`Gender: ${card?.myGender}`} <br />
+                {`${card?.birthpersonalData}`} <br />
+                {`${card?.newsletter}`}
+              </pre>
+            </div>
+          ))}
         {}
       </div>
     </div>

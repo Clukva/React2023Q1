@@ -72,3 +72,15 @@ export interface CustomError {
     error: string;
   };
 }
+
+export interface IStateFormStore {
+  nameForm: string;
+  surname?: string;
+  birthday?: string;
+  country?: string;
+  birthpersonalData?: string;
+  newsletter?: string;
+  myGender?: string;
+  myImage?: [File | null];
+  imagePrev?: string;
+}
