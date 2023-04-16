@@ -18,12 +18,9 @@ export default function MyForm1() {
   const inputRefSubmit = createRef<HTMLInputElement>();
 
   const inputImageRef = useRef([false]);
-  let url = '';
 
   const dispatch = useDispatch();
   const inputFormValue = useSelector((state: RootState) => state.cards.cards);
-
-  /*  useEffect(() => {}, [inputFormValue]); */
 
   const [cardData, setCardData] = useState<IStateForm>({
     formValues: {
@@ -31,7 +28,7 @@ export default function MyForm1() {
       surname: '',
       birthday: '',
       country: '',
-      birthpersonalData: 'I dont  consent to my personal data',
+      birthpersonalData: 'I dont consent to my personal data',
       newsletter: 'I subscribe to the newsletter',
       myGender: '',
       myImage: [null],
@@ -43,16 +40,8 @@ export default function MyForm1() {
   const { register, handleSubmit, reset } = useForm<IStateForm>();
 
   const handleChangeText: SubmitHandler<IStateForm> = (data) => {
-    const {
-      nameForm,
-      surname,
-      birthday,
-      country,
-      birthpersonalData,
-      newsletter,
-      myGender,
-      imagePrev,
-    } = data.formValues;
+    const { nameForm, surname, birthday, country, birthpersonalData, newsletter, myGender } =
+      data.formValues;
     const { formValues, cardsArray } = cardData;
 
     if (
@@ -130,21 +119,24 @@ export default function MyForm1() {
           }`,
           newsletter: `${newsletter || 'I subscribe to the newsletter'}`,
           myGender: `${myGender}`,
-          /* imagePrev: ; */
         },
       ],
     });
-    dispatch(addFormCard({ ...data.formValues, imagePrev: formValues.imagePrev }));
-    // eslint-disable-next-line no-console
-    console.log(url);
-    // eslint-disable-next-line no-console
-    console.log(data.formValues, url);
+
+    dispatch(
+      addFormCard({
+        ...data.formValues,
+        imagePrev: formValues.imagePrev,
+        newsletter: formValues.newsletter,
+        birthpersonalData: data.formValues.birthpersonalData
+          ? 'I consent to my personal data'
+          : 'I dont consent to my personal data',
+      })
+    );
 
     inputRefSubmit.current?.setAttribute('style', 'opacity: 1');
     reset();
     inputImageRef.current[0] = false;
-    // eslint-disable-next-line no-console
-    console.log(inputFormValue, formValues);
   };
 
   useEffect(() => {
@@ -157,21 +149,15 @@ export default function MyForm1() {
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { target } = event;
-
     if (target.files && typeof target.files[0] === 'object') {
       const file = target.files[0];
-      url = URL.createObjectURL(file);
+      const url = URL.createObjectURL(file);
       setCardData({
-        formValues: {
-          ...formValues,
-          imagePrev: url,
-        },
+        formValues: { ...formValues, imagePrev: url },
         cardsArray: [...cardsArray],
       });
     }
     inputImageRef.current[0] = true;
-
-    return url;
   };
 
   return (
@@ -198,7 +184,7 @@ export default function MyForm1() {
           <input
             type="date"
             min="1940-04-01"
-            max="2023-04-06"
+            max="2023-04-16"
             {...register('formValues.birthday')}
           />
         </label>
@@ -276,15 +262,20 @@ export default function MyForm1() {
       </form>
       <div className="form-cards-conteiner">
         {inputFormValue.length > 1 &&
-          inputFormValue.map((card, i) => (
+          inputFormValue.slice(1).map((card, i) => (
             <div className="form-cards" key={i}>
               <img className="form-image" src={card?.imagePrev} alt="downlod images" />
               <pre>
-                {`Name: ${card?.nameForm}`} <br />
-                {`Surname: ${card?.surname}`} <br />
-                {`Birthday: ${card?.birthday}`} <br />
-                {`Country: ${card?.country}`} <br />
-                {`Gender: ${card?.myGender}`} <br />
+                <b>Name:</b>
+                {`  ${card?.nameForm}`} <br />
+                <b>Surname:</b>
+                {`  ${card?.surname}`} <br />
+                <b>Birthday:</b>
+                {`  ${card?.birthday}`} <br />
+                <b>Country:</b>
+                {`  ${card?.country}`} <br />
+                <b>Gender:</b>
+                {`  ${card?.myGender}`} <br />
                 {`${card?.birthpersonalData}`} <br />
                 {`${card?.newsletter}`}
               </pre>
