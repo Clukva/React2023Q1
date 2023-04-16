@@ -55,3 +55,20 @@ export interface IStateForm {
     imagePrev?: string;
   }[];
 }
+
+export interface ResponseType {
+  results: IItems[];
+  info: {
+    count: number;
+    next: string;
+    pages: string;
+    prev: null;
+  };
+}
+
+export interface CustomError {
+  status: number;
+  data: {
+    error: string;
+  };
+}
