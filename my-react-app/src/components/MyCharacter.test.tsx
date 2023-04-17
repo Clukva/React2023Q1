@@ -1,33 +1,47 @@
-/* import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import MyCharacter from './MyCharacter';
+import { store } from '../store/store';
 
 describe('Mycharacter', () => {
   test('renders input and button', () => {
-    render(<MyCharacter />);
+    render(
+      <Provider store={store}>
+        <MyCharacter />
+      </Provider>
+    );
 
     const searchBut = screen.getByText(/Loading/i);
     expect(searchBut).toBeInTheDocument();
-  }); */
+  });
 
-/*  test('render search button', async () => {
+  test('render search button', async () => {
     await waitFor(
       () => {
-        render(<MyCharacter />);
+        render(
+          <Provider store={store}>
+            <MyCharacter />
+          </Provider>
+        );
         const searchBut = screen.queryByText('Search');
         expect(searchBut).not.toBeInTheDocument();
       },
       { timeout: 1000 }
     );
-  }); */
+  });
 
-/*   test('should display loading ring ', async () => {
+  test('should display loading ring ', async () => {
     jest.spyOn(global, 'fetch').mockImplementation(() => new Promise(() => {}));
-    render(<MyCharacter />);
+    render(
+      <Provider store={store}>
+        <MyCharacter />
+      </Provider>
+    );
     expect(screen.getByText(/Loading/i)).toBeInTheDocument();
-  }); */
-/* }); */
+  });
+});
 
-/* jest.mock('node-fetch');
+jest.mock('node-fetch');
 
 describe('MyCharacter component', () => {
   it('renders the component', async () => {
@@ -50,7 +64,11 @@ describe('MyCharacter component', () => {
     });
 
     await act(async () => {
-      render(<MyCharacter />);
+      render(
+        <Provider store={store}>
+          <MyCharacter />
+        </Provider>
+      );
     });
 
     await waitFor(
@@ -71,4 +89,3 @@ describe('MyCharacter component', () => {
     expect(characterCard).toBeInTheDocument();
   });
 });
- */
