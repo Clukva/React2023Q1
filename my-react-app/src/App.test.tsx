@@ -1,34 +1,49 @@
-/* import React from 'react';
+import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import App from './App';
+import { store } from './store/store';
 
 test('render footer', () => {
-  render(<App />);
+  render(
+    <Provider store={store}>
+      {' '}
+      <App />
+    </Provider>
+  );
   const linkElement = screen.getByText(/Yuri/i);
   expect(linkElement).toBeInTheDocument();
 });
 
 test('render header link', () => {
-  render(<App />);
+  render(
+    <Provider store={store}>
+      {' '}
+      <App />
+    </Provider>
+  );
   const linkElement = screen.getByText(/About us/i);
   expect(linkElement).toBeInTheDocument();
 });
 
 test('render header link', () => {
-  render(<App />);
+  render(
+    <Provider store={store}>
+      {' '}
+      <App />
+    </Provider>
+  );
   const linkElement = screen.getByText(/Home/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-test('render placeholder element', async () => {
-  render(<App />);
-  const placeholderElement = await screen.findByPlaceholderText(/Search/i);
-  expect(placeholderElement).toBeInTheDocument();
-});
-
 test('render year of prodaction', () => {
-  render(<App />);
+  render(
+    <Provider store={store}>
+      {' '}
+      <App />
+    </Provider>
+  );
   const linkElement = screen.getByText(/React2023/i);
   expect(linkElement).toBeInTheDocument();
 });
- */
