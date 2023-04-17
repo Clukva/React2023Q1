@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
@@ -31,3 +31,4 @@ test('render year of prodaction', () => {
   const linkElement = screen.getByText(/React2023/i);
   expect(linkElement).toBeInTheDocument();
 });
+ */

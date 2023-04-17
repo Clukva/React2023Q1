@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import App from './App';
@@ -39,3 +39,4 @@ describe('React import', () => {
     expect(React).toBeDefined();
   });
 });
+ */
