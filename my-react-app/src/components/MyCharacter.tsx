@@ -55,12 +55,7 @@ function MyCharacter() {
 
   return (
     <>
-      <form
-        action=""
-        className="main-page-form"
-        onSubmit={(e) => e.preventDefault()}
-        data-testid="card-component"
-      >
+      <form action="" className="main-page-form" onSubmit={(e) => e.preventDefault()}>
         <input
           className="main-page--input"
           type="text"
