@@ -165,7 +165,12 @@ export default function MyForm1() {
       <form className="form-conteiner" onSubmit={handleSubmit(handleChangeText)}>
         <label className="input-name" htmlFor="formValues.nameForm">
           Name:
-          <input id="id-input" type="text" {...register('formValues.nameForm')} />
+          <input
+            id="id-input"
+            type="text"
+            {...register('formValues.nameForm')}
+            placeholder="Enter your name"
+          />
         </label>
 
         <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefName}>
@@ -174,7 +179,12 @@ export default function MyForm1() {
 
         <label className="input-name" htmlFor="surname">
           Surname:
-          <input id="surname" type="text" {...register('formValues.surname')} />
+          <input
+            id="surname"
+            type="text"
+            {...register('formValues.surname')}
+            placeholder="Enter your surname"
+          />
         </label>
         <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefSurname}>
           Please write surname correctly example Sigal
@@ -186,6 +196,7 @@ export default function MyForm1() {
             min="1940-04-01"
             max="2023-04-16"
             {...register('formValues.birthday')}
+            placeholder="Enter your birthday"
           />
         </label>
         <p className="input-text-error" style={{ opacity: 0 }} ref={inputRefData}>
@@ -193,7 +204,7 @@ export default function MyForm1() {
         </p>
         <label className="input-name" htmlFor="country">
           Country:
-          <select {...register('formValues.country')}>
+          <select {...register('formValues.country')} data-testid="country-select">
             <option value="Choose country" defaultValue="Choose country">
               Choose country
             </option>
@@ -224,6 +235,7 @@ export default function MyForm1() {
             value="I subscribe to the newsletter"
             {...register('formValues.newsletter')}
             ref={inputRefNewsSub}
+            data-testid="news-subscribe"
           />
           Subscribe to the newsletter (required field)
         </label>
@@ -233,7 +245,12 @@ export default function MyForm1() {
         <p className="input-gender">
           Gender:
           <label htmlFor="myGender">
-            <input type="radio" {...register('formValues.myGender')} value="Male" />
+            <input
+              type="radio"
+              {...register('formValues.myGender')}
+              value="Male"
+              data-testid="gender-select"
+            />
             Male
           </label>
           <label htmlFor="myGender">
@@ -258,7 +275,7 @@ export default function MyForm1() {
         <p className="data-information" style={{ opacity: 0 }} ref={inputRefSubmit}>
           Data has been saved !
         </p>
-        <input className="form-submit" type="submit" id="id-submit" />
+        <input className="form-submit" type="submit" id="id-submit" data-testid="submit-button" />
       </form>
       <div className="form-cards-conteiner">
         {inputFormValue.length > 1 &&

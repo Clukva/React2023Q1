@@ -1,7 +1,8 @@
-import { act, render, screen, waitFor } from '@testing-library/react';
-import { Provider } from 'react-redux';
+import { act, render, renderHook, screen, waitFor } from '@testing-library/react';
+import { Provider, useDispatch } from 'react-redux';
 import MyCharacter from './MyCharacter';
 import { store } from '../store/store';
+import { addSeachString } from '../store/searchSlice';
 
 describe('Mycharacter', () => {
   test('renders input and button', () => {
