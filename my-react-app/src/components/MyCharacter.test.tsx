@@ -1,7 +1,9 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { vi } from 'vitest';
 import MyCharacter from './MyCharacter';
 import { store } from '../store/store';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('Mycharacter', () => {
   test('renders input and button', () => {
@@ -31,7 +33,7 @@ describe('Mycharacter', () => {
   });
 
   test('should display loading ring ', async () => {
-    jest.spyOn(global, 'fetch').mockImplementation(() => new Promise(() => {}));
+    vi.spyOn(global, 'fetch').mockImplementation(() => new Promise(() => {}));
     render(
       <Provider store={store}>
         <MyCharacter />
@@ -41,7 +43,7 @@ describe('Mycharacter', () => {
   });
 });
 
-jest.mock('node-fetch');
+vi.mock('node-fetch');
 
 describe('MyCharacter component', () => {
   it('renders the component', async () => {
@@ -59,7 +61,7 @@ describe('MyCharacter component', () => {
       ],
     };
 
-    global.fetch = jest.fn().mockResolvedValue({
+    global.fetch = vi.fn().mockResolvedValue({
       json: () => Promise.resolve(mockResponse),
     });
 

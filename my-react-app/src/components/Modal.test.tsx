@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { vi } from 'vitest';
 import Modal from './Modal';
 
 describe('Modal', () => {
   it('should not render ', () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { container } = render(
       <Modal open={false} onClose={onClose}>
         <div>Test content</div>
@@ -14,7 +15,7 @@ describe('Modal', () => {
   });
 
   it('should render if open', () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { getByText } = render(
       <Modal open onClose={onClose}>
         <div>Test content</div>

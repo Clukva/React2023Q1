@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest';
 import validateTextInput from './utils';
 
 describe('validateTextInput function', () => {
