@@ -12,7 +12,7 @@ const PORT = 3001;
 
 async function runServer() {
   const app = express();
-  const vite = await createServer({ server: { middlewareMode: true } });
+  const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
 
   app.use(vite.middlewares);
 
@@ -20,7 +20,7 @@ async function runServer() {
     const url = req.originalUrl;
 
     try {
-      const template = fs.readFileSync(indexHTML, 'utf8');
+      const template = fs.readFileSync(indexHTML, 'utf-8');
       const transformHTML = await vite.transformIndexHtml(url, template);
       const [start, end] = transformHTML.split('<!--root-->');
       const { render } = await vite.ssrLoadModule('/src/entry-server.tsx');
