@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+
 import App from './App';
 import { store } from './store/store';
 
@@ -8,7 +10,9 @@ test('render footer', () => {
   render(
     <Provider store={store}>
       {' '}
-      <App />
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
     </Provider>
   );
   const linkElement = screen.getByText(/Yuri/i);
@@ -19,7 +23,9 @@ test('render header link', () => {
   render(
     <Provider store={store}>
       {' '}
-      <App />
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
     </Provider>
   );
   const linkElement = screen.getByText(/About us/i);
@@ -30,7 +36,9 @@ test('render header link', () => {
   render(
     <Provider store={store}>
       {' '}
-      <App />
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
     </Provider>
   );
   const linkElement = screen.getByText(/Home/i);
@@ -41,7 +49,9 @@ test('render year of prodaction', () => {
   render(
     <Provider store={store}>
       {' '}
-      <App />
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
     </Provider>
   );
   const linkElement = screen.getByText(/React2023/i);

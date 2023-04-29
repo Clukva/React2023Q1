@@ -1,0 +1,17 @@
+{
+  "all": true,
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "check-coverage": true,
+  "include": ["src/**/**/*.{js,jsx,ts,tsx}"],
+  "exclude": [
+    "cypress/**/*.*",
+    "**/*.d.ts",
+    "**/*.cy.tsx",
+    "**/*.cy.ts",
+    "**/**/*.test.tsx",
+    "src/setupTests.ts",
+    "src/babel.config.js",
+    "src/components/FormComponents/*.tsx",
+    "src/interfaces/MyCharacterInterfases.tsx"
+  ]
+}
