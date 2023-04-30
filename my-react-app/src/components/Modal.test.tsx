@@ -13,7 +13,6 @@ describe('Modal', () => {
     );
     expect(container.firstChild).toBe(null);
   });
-
   it('should render if open', () => {
     const onClose = vi.fn();
     const { getByText } = render(

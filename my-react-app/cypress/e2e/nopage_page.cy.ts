@@ -14,3 +14,8 @@ describe('not found page', () => {
     cy.get('.main-cards').contains('Rick Sanchez');
   });
 });
+describe('Empty Test', () => {
+  it('should pass', () => {
+    expect(true).to.equal(true);
+  });
+});

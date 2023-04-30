@@ -61,6 +61,26 @@ describe('The Home Page', () => {
     cy.get('.main-cards').contains('Abadango Cluster');
   });
 
+  describe('Modal Window', () => {
+    it('displays the modal window', () => {
+      cy.visit('/');
+      cy.get('#7').click();
+      cy.get('.main-modal').should('be.visible');
+      cy.get('.modal__content').should('contain', 'Male');
+      cy.get('.modal__content').should('contain', 'Human');
+      cy.get('.modal__content').should('contain', 'Genetic experiment');
+    });
+  });
+
+  describe('Modal', () => {
+    it('displays the modal window', () => {
+      cy.visit('/');
+      cy.get('#8').click();
+      cy.get('.modal_close').click();
+      cy.get('.modal_close').should('not.exist');
+    });
+  });
+
   it('check render footer', () => {
     cy.visit('http://localhost:3001');
     cy.visit('/forms');
