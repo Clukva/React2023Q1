@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IProps {}
 
 export interface IItems {
@@ -28,7 +27,6 @@ export interface IStateItem {
   items: Array<IItems>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IPropsForm {}
 
 export interface IStateForm {

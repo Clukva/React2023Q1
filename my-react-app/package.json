@@ -50,13 +50,10 @@
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.tsx",
     "cypress": "cypress open",
-    "test111": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha test/*.js",
     "cypress:report": "npx nyc report && npx nyc report --reporter=text-summary",
     "cypress:run": "cypress run --e2e",
     "cypress:e2e": "npx start-server-and-test dev http-get://localhost:3001 cypress:run",
-    "test:cypress": "npm run cypress:e2e && npm run cypress:report",
-    "test:cypressqs": "npx start-server-and-test dev http-get://localhost:3001 cypress:report",
-    "test:cypressfinal": "npm run test:cypress && npm run cypress:report"
+    "cypress:coverage": "npm run cypress:e2e && npm run cypress:report"
   },
   "eslintConfig": {
     "extends": [
