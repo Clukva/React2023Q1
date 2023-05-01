@@ -22,9 +22,16 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
     coverage: {
-      reporter: ['text', 'html'],
+      reporter: ['text'],
       provider: 'c8',
-      exclude: ['node_modules/', 'src/setupTests.ts', 'src/babel.config.js'],
+      exclude: [
+        'node_modules/',
+        'src/setupTests.ts',
+        'src/babel.config.js',
+        'src/index.tsx',
+        'src/reportWebVitals.ts',
+      ],
+      all: true,
     },
   },
 });

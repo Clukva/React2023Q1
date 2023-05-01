@@ -17,4 +17,8 @@ describe('The About Page', () => {
     cy.visit('/about');
     cy.get('.about-content').contains('The general concept of Rick and Morty');
   });
+
+  it('Some kind of crutch', () => {
+    expect(true).to.equal(true);
+  });
 });

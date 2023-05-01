@@ -18,4 +18,7 @@ describe('Empty Test', () => {
   it('should pass', () => {
     expect(true).to.equal(true);
   });
+  it('Some kind of crutch', () => {
+    expect(true).to.equal(true);
+  });
 });

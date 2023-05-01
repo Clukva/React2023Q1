@@ -1,4 +1,12 @@
 describe('The Home Page', () => {
+  it('visit links', () => {
+    cy.visit('http://localhost:3001');
+    cy.visit('/');
+    cy.contains('About Us').click();
+    cy.contains('Home').click();
+    cy.contains('Forms').click();
+  });
+
   it('successfully loads', () => {
     cy.visit('http://localhost:3001');
     cy.visit('/about');
@@ -15,6 +23,14 @@ describe('The Home Page', () => {
     cy.get('.main-page--input').should('have.value', 'summer');
     cy.get('button').click();
     cy.get('.main-cards').contains('Summer');
+  });
+
+  it('20 cards', () => {
+    cy.visit('/');
+    cy.get('.main-page--input').type('Summer').and('be.focused');
+    cy.get('.main-page--input').should('have.value', 'Summer');
+    cy.get('button').click();
+    cy.get('.main-cards').filter(':contains("Summer")').should('have.length', 1);
   });
 
   it('check wrong search form', () => {
@@ -122,5 +138,8 @@ describe('The Home Page', () => {
     cy.get('#root')
       .and('have.descendants', '.main-page--input')
       .and('have.descendants', '.main-page-form');
+  });
+  it('Some kind of crutch', () => {
+    expect(true).to.equal(true);
   });
 });

@@ -1,6 +1,6 @@
 {
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Header.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Header.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Header.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Header.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -51,11 +51,11 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 5756
+      "0": 552,
+      "1": 1104
     },
     "f": {
-      "0": 5756
+      "0": 1104
     },
     "b": {},
     "inputSourceMap": {
@@ -66,15 +66,15 @@
         "addHeader"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Header.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Header.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Header.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Header.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "3bf96841ee46503d6a8a42c6b2f791f1eb00c1be"
+    "hash": "17f4614ddb8d07e03972b8ca2281442bfc7f4239"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Footer.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Footer.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Footer.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Footer.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -125,11 +125,11 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 5756
+      "0": 552,
+      "1": 1104
     },
     "f": {
-      "0": 5756
+      "0": 1104
     },
     "b": {},
     "inputSourceMap": {
@@ -139,15 +139,15 @@
         "addFooter"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Footer.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Footer.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Footer.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Footer.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8909d6330236036d8fe55f7281c0a373bfea9fe5"
+    "hash": "8097521aeb53aaed117f9e228ef86b221b915140"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/searchSlice.ts": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/searchSlice.ts",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/searchSlice.ts": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/searchSlice.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -218,28 +218,28 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 2878,
-      "2": 178,
-      "3": 2878
+      "0": 552,
+      "1": 552,
+      "2": 40,
+      "3": 552
     },
     "f": {
-      "0": 178
+      "0": 40
     },
     "b": {},
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/searchSlice.ts"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/searchSlice.ts"
       ],
       "mappings": "AAAA,SAAS,mBAAmB;AAM5B,MAAM,eAA6B;AAAA,EACjC,aAAa;AACf;AAEA,MAAM,cAAc,YAAY;AAAA,EAC9B,MAAM;AAAA,EACN;AAAA,EACA,UAAU;AAAA,IACR,eAAe,OAAO,QAAQ;AAC5B,YAAM,cAAc,OAAO;AAAA,IAC7B;AAAA,EACF;AACF,CAAC;AAEM,aAAM,EAAE,eAAe,IAAI,YAAY;AAC9C,eAAe,YAAY;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "1ba2a163cd061c51d45469f242cc5894a262380d"
+    "hash": "8de661626d7feee7234560722d2fdeddd6557ee7"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Modal.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Modal.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Modal.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Modal.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -308,7 +308,7 @@
         },
         "end": {
           "line": 12,
-          "column": 120
+          "column": 125
         }
       },
       "7": {
@@ -448,7 +448,7 @@
         },
         "end": {
           "line": 55,
-          "column": 146
+          "column": 151
         }
       },
       "21": {
@@ -847,28 +847,28 @@
       }
     },
     "s": {
-      "0": 2878,
-      "1": 2878,
+      "0": 552,
+      "1": 552,
       "2": 0,
-      "3": 2878,
-      "4": 2878,
-      "5": 2878,
-      "6": 2878,
-      "7": 2878,
-      "8": 482,
-      "9": 482,
+      "3": 552,
+      "4": 552,
+      "5": 552,
+      "6": 552,
+      "7": 552,
+      "8": 132,
+      "9": 132,
       "10": 0,
-      "11": 482,
-      "12": 86,
+      "11": 132,
+      "12": 24,
       "13": 0,
-      "14": 2878,
-      "15": 2878,
-      "16": 2878,
-      "17": 2878,
-      "18": 2878,
-      "19": 2878,
-      "20": 2474,
-      "21": 2474,
+      "14": 552,
+      "15": 552,
+      "16": 552,
+      "17": 552,
+      "18": 552,
+      "19": 552,
+      "20": 496,
+      "21": 496,
       "22": 0,
       "23": 0,
       "24": 0,
@@ -876,31 +876,31 @@
       "26": 0
     },
     "f": {
-      "0": 2878,
-      "1": 482,
-      "2": 86,
-      "3": 2474,
+      "0": 552,
+      "1": 132,
+      "2": 24,
+      "3": 496,
       "4": 0
     },
     "b": {
       "0": [
-        2878,
+        552,
         0
       ],
       "1": [
         0,
-        2878
+        552
       ],
       "2": [
         0,
-        482
+        132
       ],
       "3": [
         0,
-        86
+        24
       ],
       "4": [
-        2878,
+        552,
         0
       ],
       "5": [
@@ -932,15 +932,15 @@
         "$RefreshReg$"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Modal.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Modal.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Modal.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Modal.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "857ee3065d2c1573440e01168c7897b695fef7c0"
+    "hash": "349939f2f432d2131c0946c23e669fc729988e76"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/rickApi.ts": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/rickApi.ts",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/rickApi.ts": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/rickApi.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1035,29 +1035,29 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 2878,
-      "2": 1782,
-      "3": 2878
+      "0": 552,
+      "1": 552,
+      "2": 352,
+      "3": 552
     },
     "f": {
-      "0": 2878,
-      "1": 1782
+      "0": 552,
+      "1": 352
     },
     "b": {},
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/rickApi.ts"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/rickApi.ts"
       ],
       "mappings": "AAAA,SAAS,WAAW,sBAAsB;AAOnC,aAAM,UAAU,UAAU;AAAA,EAC/B,aAAa;AAAA,EACb,WAAW,eAAe,EAAE,SAAS,mCAAmC,CAAC;AAAA,EACzE,WAAW,CAAC,WAAW;AAAA,IACrB,UAAU,MAAM,MAAwB;AAAA,MACtC,OAAO,CAAC,SAAS,aAAa;AAAA,IAChC,CAAC;AAAA,EACH;AACF,CAAC;AAEM,aAAM,EAAE,iBAAiB,IAAI;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "76c79810a9b136fa5f71491e4cd3cdf11132e7c5"
+    "hash": "c728f3c22863dfffd21dcd3ff10ad25e8d73d444"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/cardApi.ts": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/cardApi.ts",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/cardApi.ts": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/cardApi.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1152,29 +1152,29 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 2878,
-      "2": 1699,
-      "3": 2878
+      "0": 552,
+      "1": 552,
+      "2": 344,
+      "3": 552
     },
     "f": {
-      "0": 2878,
-      "1": 1699
+      "0": 552,
+      "1": 344
     },
     "b": {},
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/cardApi.ts"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/cardApi.ts"
       ],
       "mappings": "AAAA,SAAS,WAAW,sBAAsB;AAOnC,aAAM,UAAU,UAAU;AAAA,EAC/B,aAAa;AAAA,EACb,WAAW,eAAe,EAAE,SAAS,mCAAmC,CAAC;AAAA,EACzE,WAAW,CAAC,WAAW;AAAA,IACrB,SAAS,MAAM,MAAwB;AAAA,MACrC,OAAO,CAAC,SAAS,aAAa;AAAA,IAChC,CAAC;AAAA,EACH;AACF,CAAC;AAEM,aAAM,EAAE,gBAAgB,IAAI;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9254b93eeb8223c9e4c842e47f52f2ca52c3c423"
+    "hash": "861ad9c5a8fa6cfbebd02f26e03bf4e55757b954"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyCharacter.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyCharacter.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyCharacter.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyCharacter.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -1243,7 +1243,7 @@
         },
         "end": {
           "line": 12,
-          "column": 126
+          "column": 131
         }
       },
       "7": {
@@ -1663,7 +1663,7 @@
         },
         "end": {
           "line": 269,
-          "column": 152
+          "column": 157
         }
       },
       "49": {
@@ -2622,56 +2622,56 @@
       }
     },
     "s": {
-      "0": 2878,
-      "1": 2878,
+      "0": 552,
+      "1": 552,
       "2": 0,
-      "3": 2878,
-      "4": 2878,
-      "5": 2878,
-      "6": 2878,
-      "7": 2878,
-      "8": 2878,
-      "9": 18558,
-      "10": 18558,
-      "11": 17528,
-      "12": 32619,
-      "13": 17528,
-      "14": 17528,
-      "15": 178,
-      "16": 17528,
-      "17": 17528,
-      "18": 17528,
-      "19": 17528,
-      "20": 17528,
-      "21": 17528,
-      "22": 17528,
-      "23": 3208,
-      "24": 3208,
+      "3": 552,
+      "4": 552,
+      "5": 552,
+      "6": 552,
+      "7": 552,
+      "8": 552,
+      "9": 3628,
+      "10": 3628,
+      "11": 3444,
+      "12": 6448,
+      "13": 3444,
+      "14": 3444,
+      "15": 40,
+      "16": 3444,
+      "17": 3444,
+      "18": 3444,
+      "19": 3444,
+      "20": 3444,
+      "21": 3444,
+      "22": 3444,
+      "23": 640,
+      "24": 640,
       "25": 0,
-      "26": 17528,
-      "27": 6604,
-      "28": 10924,
+      "26": 3444,
+      "27": 1300,
+      "28": 2144,
       "29": 0,
-      "30": 1781,
-      "31": 1781,
+      "30": 320,
+      "31": 320,
       "32": 0,
       "33": 0,
       "34": 0,
-      "35": 178,
-      "36": 70,
-      "37": 133144,
-      "38": 158,
-      "39": 158,
-      "40": 2878,
-      "41": 1606,
-      "42": 2878,
-      "43": 2878,
-      "44": 2878,
-      "45": 2878,
-      "46": 2878,
-      "47": 2878,
-      "48": 2436,
-      "49": 2436,
+      "35": 40,
+      "36": 16,
+      "37": 27688,
+      "38": 40,
+      "39": 40,
+      "40": 552,
+      "41": 312,
+      "42": 552,
+      "43": 552,
+      "44": 552,
+      "45": 552,
+      "46": 552,
+      "47": 552,
+      "48": 495,
+      "49": 495,
       "50": 0,
       "51": 0,
       "52": 0,
@@ -2679,76 +2679,76 @@
       "54": 0
     },
     "f": {
-      "0": 2878,
-      "1": 18558,
-      "2": 32619,
-      "3": 178,
-      "4": 3208,
-      "5": 3208,
+      "0": 552,
+      "1": 3628,
+      "2": 6448,
+      "3": 40,
+      "4": 640,
+      "5": 640,
       "6": 0,
-      "7": 1781,
-      "8": 1781,
-      "9": 178,
-      "10": 70,
-      "11": 133144,
-      "12": 158,
-      "13": 1606,
-      "14": 2436,
+      "7": 320,
+      "8": 320,
+      "9": 40,
+      "10": 16,
+      "11": 27688,
+      "12": 40,
+      "13": 312,
+      "14": 495,
       "15": 0
     },
     "b": {
       "0": [
-        2878,
+        552,
         0
       ],
       "1": [
         0,
-        2878
+        552
       ],
       "2": [
         0,
-        3208
+        640
       ],
       "3": [
-        6604,
-        10924
+        1300,
+        2144
       ],
       "4": [
         0,
-        1781
+        320
       ],
       "5": [
         0,
         0
       ],
       "6": [
-        10924,
-        5748,
-        482
+        2144,
+        1150,
+        132
       ],
       "7": [
-        482,
-        454
+        132,
+        116
       ],
       "8": [
-        482,
+        132,
         0
       ],
       "9": [
-        4254,
-        6670
+        754,
+        1390
       ],
       "10": [
         0,
-        6670
+        1390
       ],
       "11": [
-        6670,
-        6670,
-        6670
+        1390,
+        1390,
+        1390
       ],
       "12": [
-        2878,
+        552,
         0
       ],
       "13": [
@@ -2820,15 +2820,15 @@
         "$RefreshReg$"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyCharacter.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyCharacter.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyCharacter.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyCharacter.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "4872a735bcab1aeb54cab568b0dba26e51c770ee"
+    "hash": "652147b2c576c6a8a24970d2075783176d9279d3"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Mainpage.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Mainpage.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Mainpage.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Mainpage.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2879,11 +2879,11 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 4242
+      "0": 552,
+      "1": 824
     },
     "f": {
-      "0": 4242
+      "0": 824
     },
     "b": {},
     "inputSourceMap": {
@@ -2894,15 +2894,15 @@
         "addMainPage"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Mainpage.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Mainpage.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Mainpage.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Mainpage.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d895b895d63c2706a175584ebe5b2f34f9d8e93c"
+    "hash": "e07b9167739954ac0a1ff1ece39149883cfb8cad"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Aboutpage.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Aboutpage.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Aboutpage.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Aboutpage.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2953,11 +2953,11 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 1078
+      "0": 552,
+      "1": 208
     },
     "f": {
-      "0": 1078
+      "0": 208
     },
     "b": {},
     "inputSourceMap": {
@@ -2967,15 +2967,15 @@
         "addAboutPage"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Aboutpage.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Aboutpage.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Aboutpage.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Aboutpage.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f5dc52cc7aa289c26da2bc378734824e4faf1e02"
+    "hash": "dcd5e480c5315812c620f3503dd6dc877572c9ef"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Errorpage.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Errorpage.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Errorpage.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Errorpage.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3026,11 +3026,11 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 140
+      "0": 552,
+      "1": 32
     },
     "f": {
-      "0": 140
+      "0": 32
     },
     "b": {},
     "inputSourceMap": {
@@ -3040,15 +3040,15 @@
         "addErrorPage"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Errorpage.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Errorpage.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Errorpage.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Errorpage.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "15a0e5f879eda1509dfd502b2b7d6768028fc7de"
+    "hash": "909d2005664f6363e74d84f7734de4a6d3f955ad"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/utils/utils.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/utils/utils.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/utils/utils.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/utils/utils.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3109,12 +3109,12 @@
     },
     "branchMap": {},
     "s": {
-      "0": 129,
-      "1": 129,
-      "2": 129
+      "0": 32,
+      "1": 32,
+      "2": 32
     },
     "f": {
-      "0": 129
+      "0": 32
     },
     "b": {},
     "inputSourceMap": {
@@ -3128,15 +3128,15 @@
         "test"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/utils/utils.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/utils/utils.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/utils/utils.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/utils/utils.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "1e2f1efc287e3883fea9fe25a011a97bc18b27aa"
+    "hash": "1dc43407c3a1b9933533b50a793ef5c7f7b1eea0"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/formSlice.ts": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/formSlice.ts",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/formSlice.ts": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/formSlice.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -3207,28 +3207,28 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 2878,
-      "2": 63,
-      "3": 2878
+      "0": 552,
+      "1": 552,
+      "2": 16,
+      "3": 552
     },
     "f": {
-      "0": 63
+      "0": 16
     },
     "b": {},
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/formSlice.ts"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/formSlice.ts"
       ],
       "mappings": "AAAA,SAAS,mBAAmB;AAO5B,MAAM,eAA2B;AAAA,EAC/B,OAAO,CAAC,IAAI;AACd;AAEA,MAAM,YAAY,YAAY;AAAA,EAC5B,MAAM;AAAA,EACN;AAAA,EACA,UAAU;AAAA,IACR,YAAY,OAAO,QAAQ;AACzB,YAAM,MAAM,KAAK,OAAO,OAAO;AAAA,IACjC;AAAA,EACF;AACF,CAAC;AAEM,aAAM,EAAE,YAAY,IAAI,UAAU;AACzC,eAAe,UAAU;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7e807b9bab1daa27985441d0f5b906347e0f9cb8"
+    "hash": "1063ff9327e1aa292260d7d836f230dc7e23d2e7"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyForm.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyForm.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyForm.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyForm.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3297,7 +3297,7 @@
         },
         "end": {
           "line": 12,
-          "column": 121
+          "column": 126
         }
       },
       "7": {
@@ -4147,7 +4147,7 @@
         },
         "end": {
           "line": 506,
-          "column": 147
+          "column": 152
         }
       },
       "92": {
@@ -5546,99 +5546,99 @@
       }
     },
     "s": {
-      "0": 2878,
-      "1": 2878,
+      "0": 345,
+      "1": 345,
       "2": 0,
-      "3": 2878,
-      "4": 2878,
-      "5": 2878,
-      "6": 2878,
-      "7": 2878,
-      "8": 2878,
-      "9": 1812,
-      "10": 1812,
-      "11": 1812,
-      "12": 1812,
-      "13": 1812,
-      "14": 1812,
-      "15": 1812,
-      "16": 1812,
-      "17": 1812,
-      "18": 1812,
-      "19": 1812,
-      "20": 1812,
-      "21": 1812,
-      "22": 2001,
-      "23": 1812,
-      "24": 1812,
-      "25": 1812,
-      "26": 64,
-      "27": 64,
-      "28": 64,
-      "29": 1,
-      "30": 1,
+      "3": 345,
+      "4": 345,
+      "5": 345,
+      "6": 345,
+      "7": 345,
+      "8": 345,
+      "9": 250,
+      "10": 250,
+      "11": 250,
+      "12": 250,
+      "13": 250,
+      "14": 250,
+      "15": 250,
+      "16": 250,
+      "17": 250,
+      "18": 250,
+      "19": 250,
+      "20": 250,
+      "21": 250,
+      "22": 290,
+      "23": 250,
+      "24": 250,
+      "25": 250,
+      "26": 10,
+      "27": 10,
+      "28": 10,
+      "29": 0,
+      "30": 0,
       "31": 0,
       "32": 0,
-      "33": 1,
+      "33": 0,
       "34": 0,
-      "35": 1,
-      "36": 1,
-      "37": 1,
+      "35": 0,
+      "36": 0,
+      "37": 0,
       "38": 0,
-      "39": 1,
-      "40": 1,
-      "41": 1,
+      "39": 0,
+      "40": 0,
+      "41": 0,
       "42": 0,
-      "43": 1,
-      "44": 1,
-      "45": 1,
+      "43": 0,
+      "44": 0,
+      "45": 0,
       "46": 0,
-      "47": 1,
-      "48": 1,
-      "49": 1,
+      "47": 0,
+      "48": 0,
+      "49": 0,
       "50": 0,
-      "51": 1,
-      "52": 1,
-      "53": 1,
+      "51": 0,
+      "52": 0,
+      "53": 0,
       "54": 0,
-      "55": 1,
-      "56": 1,
-      "57": 1,
-      "58": 63,
-      "59": 63,
-      "60": 63,
-      "61": 63,
-      "62": 63,
-      "63": 63,
-      "64": 63,
-      "65": 63,
-      "66": 63,
-      "67": 63,
-      "68": 63,
-      "69": 63,
-      "70": 1812,
-      "71": 1475,
-      "72": 4,
-      "73": 1812,
-      "74": 1812,
-      "75": 117,
-      "76": 117,
-      "77": 117,
-      "78": 117,
-      "79": 117,
-      "80": 117,
-      "81": 1812,
-      "82": 252,
-      "83": 2878,
-      "84": 663,
-      "85": 2878,
-      "86": 2878,
-      "87": 2878,
-      "88": 2878,
-      "89": 2878,
-      "90": 2878,
-      "91": 2435,
-      "92": 2435,
+      "55": 0,
+      "56": 0,
+      "57": 0,
+      "58": 10,
+      "59": 10,
+      "60": 10,
+      "61": 10,
+      "62": 10,
+      "63": 10,
+      "64": 10,
+      "65": 10,
+      "66": 10,
+      "67": 10,
+      "68": 10,
+      "69": 10,
+      "70": 250,
+      "71": 200,
+      "72": 0,
+      "73": 250,
+      "74": 250,
+      "75": 20,
+      "76": 20,
+      "77": 20,
+      "78": 20,
+      "79": 20,
+      "80": 20,
+      "81": 250,
+      "82": 40,
+      "83": 345,
+      "84": 85,
+      "85": 345,
+      "86": 345,
+      "87": 345,
+      "88": 345,
+      "89": 345,
+      "90": 345,
+      "91": 309,
+      "92": 309,
       "93": 0,
       "94": 0,
       "95": 0,
@@ -5646,49 +5646,49 @@
       "97": 0
     },
     "f": {
-      "0": 2878,
-      "1": 1812,
-      "2": 2001,
-      "3": 64,
-      "4": 1475,
-      "5": 4,
-      "6": 117,
-      "7": 252,
-      "8": 663,
-      "9": 2435,
+      "0": 345,
+      "1": 250,
+      "2": 290,
+      "3": 10,
+      "4": 200,
+      "5": 0,
+      "6": 20,
+      "7": 40,
+      "8": 85,
+      "9": 309,
       "10": 0
     },
     "b": {
       "0": [
-        2878,
+        345,
         0
       ],
       "1": [
         0,
-        2878
+        345
       ],
       "2": [
-        1,
-        63
+        0,
+        10
       ],
       "3": [
-        64,
-        64,
-        63,
-        63,
-        63,
-        63,
-        63,
-        63,
-        63
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
       ],
       "4": [
-        1,
+        0,
         0
       ],
       "5": [
-        1,
-        1
+        0,
+        0
       ],
       "6": [
         0,
@@ -5696,86 +5696,86 @@
       ],
       "7": [
         0,
-        1
+        0
       ],
       "8": [
-        1,
-        1
+        0,
+        0
       ],
       "9": [
-        1,
+        0,
         0
       ],
       "10": [
         0,
-        1
+        0
       ],
       "11": [
-        1,
+        0,
         0
       ],
       "12": [
         0,
-        1
+        0
       ],
       "13": [
-        1,
-        1
+        0,
+        0
       ],
       "14": [
-        1,
+        0,
         0
       ],
       "15": [
         0,
-        1
+        0
       ],
       "16": [
-        1,
+        0,
         0
       ],
       "17": [
         0,
-        1
+        0
       ],
       "18": [
-        1,
+        0,
         0
       ],
       "19": [
         0,
-        1
+        0
       ],
       "20": [
-        1,
+        0,
         0
       ],
       "21": [
-        63,
+        10,
         0
       ],
       "22": [
-        63,
-        63
+        10,
+        10
       ],
       "23": [
-        63,
+        10,
         0
       ],
       "24": [
-        117,
+        20,
         0
       ],
       "25": [
-        117,
-        117
+        20,
+        20
       ],
       "26": [
-        1812,
-        252
+        250,
+        40
       ],
       "27": [
-        2878,
+        345,
         0
       ],
       "28": [
@@ -5856,15 +5856,15 @@
         "$RefreshReg$"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyForm.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyForm.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/MyForm.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/MyForm.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "6a07a45520b4060435a1b844e879996167834d6d"
+    "hash": "e810a88094502967b95d32771c83db654ba29b46"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Formspage.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Formspage.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Formspage.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Formspage.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -5915,11 +5915,11 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 1326
+      "0": 552,
+      "1": 272
     },
     "f": {
-      "0": 1326
+      "0": 272
     },
     "b": {},
     "inputSourceMap": {
@@ -5930,15 +5930,15 @@
         "addFormsPage"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Formspage.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Formspage.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/pages/Formspage.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/pages/Formspage.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "fe35ecdaff01529bd851364401a71c603c6d13ea"
+    "hash": "9fcf8191e2c3b751dced86320c3f18926a0cd922"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/App.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/App.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/App.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/App.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -6007,7 +6007,7 @@
         },
         "end": {
           "line": 12,
-          "column": 107
+          "column": 112
         }
       },
       "7": {
@@ -6097,7 +6097,7 @@
         },
         "end": {
           "line": 91,
-          "column": 133
+          "column": 138
         }
       },
       "16": {
@@ -6412,23 +6412,23 @@
       }
     },
     "s": {
-      "0": 2878,
-      "1": 2878,
+      "0": 552,
+      "1": 552,
       "2": 0,
-      "3": 2878,
-      "4": 2878,
-      "5": 2878,
-      "6": 2878,
-      "7": 2878,
-      "8": 6786,
-      "9": 2878,
-      "10": 2878,
-      "11": 2878,
-      "12": 2878,
-      "13": 2878,
-      "14": 2878,
-      "15": 2434,
-      "16": 2434,
+      "3": 552,
+      "4": 552,
+      "5": 552,
+      "6": 552,
+      "7": 552,
+      "8": 1288,
+      "9": 552,
+      "10": 552,
+      "11": 552,
+      "12": 552,
+      "13": 552,
+      "14": 552,
+      "15": 495,
+      "16": 495,
       "17": 0,
       "18": 0,
       "19": 0,
@@ -6436,22 +6436,22 @@
       "21": 0
     },
     "f": {
-      "0": 2878,
-      "1": 6786,
-      "2": 2434,
+      "0": 552,
+      "1": 1288,
+      "2": 495,
       "3": 0
     },
     "b": {
       "0": [
-        2878,
+        552,
         0
       ],
       "1": [
         0,
-        2878
+        552
       ],
       "2": [
-        2878,
+        552,
         0
       ],
       "3": [
@@ -6481,15 +6481,15 @@
         "$RefreshReg$"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/App.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/App.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/App.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/App.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7a89bd47fd6b3f52d3b0811e636b5cb4a460e5c3"
+    "hash": "25e1227a46ac64237a8fff327e674ed366b672df"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/store.ts": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/store.ts",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/store.ts": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/store.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -6540,26 +6540,26 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2878,
-      "1": 2878
+      "0": 552,
+      "1": 552
     },
     "f": {
-      "0": 2878
+      "0": 552
     },
     "b": {},
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/store/store.ts"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/store/store.ts"
       ],
       "mappings": "AAAA,SAAS,sBAAsB;AAC/B,OAAO,mBAAmB;AAC1B,SAAS,eAAe;AACxB,SAAS,eAAe;AACxB,OAAO,iBAAiB;AAEjB,aAAM,QAAQ,eAAe;AAAA,EAClC,SAAS;AAAA,IACP,QAAQ;AAAA,IACR,OAAO;AAAA,IACP,CAAC,QAAQ,WAAW,GAAG,QAAQ;AAAA,IAC/B,CAAC,QAAQ,WAAW,GAAG,QAAQ;AAAA,EACjC;AAAA,EACA,YAAY,CAAC,yBACX,qBAAqB,EAAE,OAAO,QAAQ,YAAY,QAAQ,UAAU;AACxE,CAAC;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "6f04be42f4fa57bb490a50e6559c1a53dae31150"
+    "hash": "3e0a3637ac0fa43328fa7b8bd05743f087630ebb"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/entry-client.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/entry-client.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/entry-client.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/entry-client.tsx",
     "statementMap": {
       "0": {
         "start": {
@@ -6575,7 +6575,7 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 2878
+      "0": 552
     },
     "f": {},
     "b": {},
@@ -6593,15 +6593,15 @@
         "getElementById"
       ],
       "sources": [
-        "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/entry-client.tsx"
+        "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/entry-client.tsx"
       ],
-      "file": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/entry-client.tsx"
+      "file": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/entry-client.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "11dc534f4d56d1a4b5bc932aa144b301e762ff40"
+    "hash": "c9ca77845266200e74f4f46a9dc44c48f4212773"
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/entry-server.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/entry-server.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/entry-server.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/entry-server.tsx",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -6609,8 +6609,8 @@
     "f": {},
     "b": {}
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/index.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/index.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/index.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/index.tsx",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -6618,8 +6618,8 @@
     "f": {},
     "b": {}
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/reportWebVitals.ts": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/reportWebVitals.ts",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/reportWebVitals.ts": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/reportWebVitals.ts",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -6627,8 +6627,8 @@
     "f": {},
     "b": {}
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Main.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Main.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Main.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Main.tsx",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -6636,8 +6636,8 @@
     "f": {},
     "b": {}
   },
-  "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Router.tsx": {
-    "path": "C:/Users/User/Desktop/vite/React2023Q1/my-react-app/src/components/Router.tsx",
+  "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Router.tsx": {
+    "path": "C:/Users/User/Desktop/ssr-check/React2023Q1/my-react-app/src/components/Router.tsx",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
